@@ -9,26 +9,31 @@ import Foundation
 import SwiftUI
 import SwiftData
 import UIKit
+import PDFKit
 
 
 @Model
 class Book_Data_Model: Identifiable{
     var id: String
     var Book_Name: String
-    var Book_Image: UIImage
+    var Book_Image: UIImage?
     var Book_Data_File_URL: URL?
+    var Book_PDF_File: PDFDocument?
     
-    init(id: String, Book_Name: String, Book_Image: UIImage, Book_Data_File_URL: URL?) {
+    init(id: String, Book_Name: String, Book_Image: UIImage?, Book_Data_File_URL: URL?, Book_PDF_File: PDFDocument?) {
         self.id = UUID().uuidString
         self.Book_Name = Book_Name
         self.Book_Image = Book_Image
         self.Book_Data_File_URL = Book_Data_File_URL
+        self.Book_PDF_File = Book_PDF_File
     }
+    
 }
 
 class ImagePDFViewModel: ObservableObject{
     @Published var selectedImage: UIImage?
     @Published var selectedPDFURL: URL?
+    @Published var Book_PDF_File: PDFDocument?
     
     @Published var isImagePickerPresented = false
     @Published var isDocumentPickerPresented = false
@@ -39,6 +44,12 @@ class ImagePDFViewModel: ObservableObject{
     func choosePDF(){
         isDocumentPickerPresented.toggle()
     }
+    func loadPDFDocument(pdfURL: URL){
+            guard let document = PDFDocument(url: pdfURL)else{
+                return
+            }
+            Book_PDF_File = document
+        }
 }
 
 struct ImagePicker: UIViewControllerRepresentable{

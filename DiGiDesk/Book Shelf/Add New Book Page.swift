@@ -63,7 +63,7 @@ struct Add_New_Book_Page: View {
         }
     }
     func AddBook(){
-        let New_Book = Book_Data_Model(id: UUID().uuidString, Book_Name: Book_Name, Book_Image: ViewModel.selectedImage!, Book_Data_File_URL: ViewModel.selectedPDFURL)
+        let New_Book = Book_Data_Model(id: UUID().uuidString, Book_Name: Book_Name, Book_Image: ViewModel.selectedImage!, Book_Data_File_URL: ViewModel.selectedPDFURL, Book_PDF_File: ViewModel.Book_PDF_File)
         Context.insert(New_Book)
     }
 }

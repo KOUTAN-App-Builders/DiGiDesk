@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AED6D2B660835004078C5 /* List of Exam URLs.swift */; };
 		3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D25952B581E1700FFC280 /* DiGiDeskApp.swift */; };
 		3C0D25982B581E1700FFC280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D25972B581E1700FFC280 /* ContentView.swift */; };
 		3C0D259A2B581E1800FFC280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25992B581E1800FFC280 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		3C0D25AF2B581E1900FFC280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */; };
 		3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */; };
 		3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BDC2B5AA03B000F474D /* Book Data Manager.swift */; };
-		3CAC0BDF2B5AA4E4000F474D /* About Book Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BDE2B5AA4E4000F474D /* About Book Page.swift */; };
 		3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */; };
 		3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4142B596D3900EF4846 /* Calendar Page.swift */; };
 		3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C0AED6D2B660835004078C5 /* List of Exam URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List of Exam URLs.swift"; sourceTree = "<group>"; };
 		3C0D25922B581E1700FFC280 /* DiGiDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiGiDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0D25952B581E1700FFC280 /* DiGiDeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiGiDeskApp.swift; sourceTree = "<group>"; };
 		3C0D25972B581E1700FFC280 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add New Book Page.swift"; sourceTree = "<group>"; };
 		3CAC0BDC2B5AA03B000F474D /* Book Data Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Data Manager.swift"; sourceTree = "<group>"; };
-		3CAC0BDE2B5AA4E4000F474D /* About Book Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About Book Page.swift"; sourceTree = "<group>"; };
 		3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Shelf Page.swift"; sourceTree = "<group>"; };
 		3CDCF4142B596D3900EF4846 /* Calendar Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Page.swift"; sourceTree = "<group>"; };
 		3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Tab Bar.swift"; sourceTree = "<group>"; };
@@ -85,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C0AED6C2B6607BA004078C5 /* Views forOther Functionalities */ = {
+			isa = PBXGroup;
+			children = (
+				3C0AED6D2B660835004078C5 /* List of Exam URLs.swift */,
+			);
+			path = "Views forOther Functionalities";
+			sourceTree = "<group>";
+		};
 		3C0D25892B581E1700FFC280 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +119,7 @@
 				3CEE56092B5945930030C170 /* Custom Tab Bar */,
 				3CDCF4102B596CBF00EF4846 /* Book Shelf */,
 				3CDCF4132B596D0F00EF4846 /* Calendar */,
+				3C0AED6C2B6607BA004078C5 /* Views forOther Functionalities */,
 				3C0D25992B581E1800FFC280 /* Assets.xcassets */,
 				3C0D259B2B581E1800FFC280 /* Preview Content */,
 			);
@@ -149,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */,
-				3CAC0BDE2B5AA4E4000F474D /* About Book Page.swift */,
 				3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */,
 				3CAC0BDC2B5AA03B000F474D /* Book Data Manager.swift */,
 			);
@@ -284,8 +292,8 @@
 				3C0D25982B581E1700FFC280 /* ContentView.swift in Sources */,
 				3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */,
 				3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */,
-				3CAC0BDF2B5AA4E4000F474D /* About Book Page.swift in Sources */,
 				3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */,
+				3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */,
 				3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
