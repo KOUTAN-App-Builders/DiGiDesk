@@ -14,30 +14,78 @@ import Combine
 struct Book_Shelf_Page: View {
     
     @Query private var Books: [Book_Data_Model]
+    @State var isListViewSelected: Bool = false
+    @State private var searchText: String = ""
     
     var body: some View {
         ScrollView{
+            HStack{
+                Button(action: {isListViewSelected = false}, label: {
+                    if isListViewSelected == false{
+                        Image(systemName: "rectangle.grid.1x2.fill")
+                    }else{
+                        Image(systemName: "rectangle.grid.1x2")
+                    }
+                })
+                Button(action: {isListViewSelected = true}, label: {
+                    if isListViewSelected == false{
+                        Image(systemName: "list.bullet.rectangle")
+                    }else{
+                        Image(systemName: "list.bullet.rectangle.fill")
+                    }
+                })
+            }
+            .padding(.leading)
             VStack(alignment: .leading, spacing: 20){
-                ForEach(Books){ book in
-                    NavigationLink {
-                        About_Book_Page(Book: book)
-                    } label: {
-                        VStack(alignment: .leading, spacing: 8){
-                            Image(uiImage: book.Book_Image!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 200, height: 200)
-                            Text(book.Book_Name)
-                                .font(.headline)
+                if isListViewSelected == false{
+                    ForEach(Books){ book in
+                        NavigationLink {
+                            About_Book_Page(Book: book)
+                        } label: {
+                            VStack(alignment: .leading, spacing: 8){
+                                Image(uiImage: UIImage(data: book.Book_Image!)!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 200, height: 200)
+                                Text(book.Book_Name)
+                                    .font(.headline)
+                            }
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                    }
+                }else{
+                    ForEach(Books){ book in
+                        NavigationLink {
+                            About_Book_Page(Book: book)
+                        } label: {
+                            HStack{
+                                Image(uiImage: UIImage(data: book.Book_Image!)!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 90, height: 120)
+                                Text(book.Book_Name)
+                                    .bold()
+                                    .padding(.leading)
+                            }
+                            .padding()
                         }
                     }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
                 }
             }
             .padding()
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        Add_New_Book_Page()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .searchable(text: $searchText)
         }
     }
 }
@@ -94,19 +142,14 @@ struct PDFViewer: View {
     
     var body: some View {
         VStack{
-            if let pdfDocument = Book.Book_PDF_File{
-                PDFViewWrapper(pdfURL: Book.Book_Data_File_URL!)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                HStack{
-                    
-                }
-            }else{
-                Text("Loading PDF...")
-            }
+            PDFViewWrapper(pdfURL: Book.Book_Data_File_URL!)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
 
 #Preview {
-    Book_Shelf_Page()
+    NavigationView{
+        Book_Shelf_Page()
+    }
 }

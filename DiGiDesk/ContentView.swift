@@ -17,9 +17,10 @@ struct ContentView: View {
                 Book_Shelf_Page()
             }
             if selectedTab == .calendar{
-                Calendar_Page()
+                CalendarView()
             }
             Custom_Tab_Bar(selectedTab: $selectedTab)
+                .padding(.top)
         }
         .padding()
     }

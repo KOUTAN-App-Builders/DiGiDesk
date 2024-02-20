@@ -16,16 +16,14 @@ import PDFKit
 class Book_Data_Model: Identifiable{
     var id: String
     var Book_Name: String
-    var Book_Image: UIImage?
+    var Book_Image: Data?
     var Book_Data_File_URL: URL?
-    var Book_PDF_File: PDFDocument?
     
-    init(id: String, Book_Name: String, Book_Image: UIImage?, Book_Data_File_URL: URL?, Book_PDF_File: PDFDocument?) {
+    init(id: String, Book_Name: String, Book_Image: Data?, Book_Data_File_URL: URL?) {
         self.id = UUID().uuidString
         self.Book_Name = Book_Name
         self.Book_Image = Book_Image
         self.Book_Data_File_URL = Book_Data_File_URL
-        self.Book_PDF_File = Book_PDF_File
     }
     
 }
@@ -50,36 +48,6 @@ class ImagePDFViewModel: ObservableObject{
             }
             Book_PDF_File = document
         }
-}
-
-struct ImagePicker: UIViewControllerRepresentable{
-    @Binding var image: UIImage?
-    
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-        let parent: ImagePicker
-        
-        init(parent: ImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.originalImage] as? UIImage{
-                parent.image = uiImage
-            }
-            
-            picker.dismiss(animated: true)
-        }
-    }
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        return picker
-    }
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-    }
 }
 
 struct DocumentPicker: UIViewControllerRepresentable{
