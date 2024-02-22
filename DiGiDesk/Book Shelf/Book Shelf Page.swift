@@ -97,8 +97,13 @@ struct About_Book_Page: View {
     
     var body: some View {
         ScrollView{
-            Text(Book.Book_Name)
-                .font(.headline)
+            if let uiImage = UIImage(data: Book.Book_Image!){
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                    .shadow(radius: 10)
+            }
             NavigationLink {
                 PDFViewer(Book: Book)
             } label: {
@@ -118,6 +123,7 @@ struct About_Book_Page: View {
                     .padding()
             })
         }
+        .navigationTitle(Book.Book_Name)
     }
     func DeleteBook(_ item: Book_Data_Model){
         Context.delete(Book)

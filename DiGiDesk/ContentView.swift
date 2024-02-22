@@ -19,8 +19,10 @@ struct ContentView: View {
             if selectedTab == .calendar{
                 CalendarView()
             }
+            Spacer()
             Custom_Tab_Bar(selectedTab: $selectedTab)
                 .padding(.top)
+                .ignoresSafeArea(edges: .bottom)
         }
         .padding()
     }
