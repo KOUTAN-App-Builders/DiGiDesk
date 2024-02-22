@@ -72,6 +72,7 @@ struct Add_New_Book_Page: View {
             }
         }
         .navigationTitle("Add New Book")
+        .padding()
         .alert(isPresented: $ShowAlert) {
             Alert(title: Text("Missing PDF File or Image"), message: Text("Please choose a PDF File and an image before saving."), dismissButton: .default(Text("OK")))
         }

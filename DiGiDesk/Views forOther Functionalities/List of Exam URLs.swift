@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import SwiftData
 
+@Model
 class Exam_Data: Identifiable{
     var id: String
     var Exam_Name: String
@@ -19,11 +21,111 @@ class Exam_Data: Identifiable{
 }
 
 struct List_of_Exam_URLs: View {
+    
+    @Query private var Exams: [Exam_Data]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            ForEach(Exams){ exam in
+                VStack{
+                    Text(exam.Exam_Name)
+                        .font(.title)
+                    Text(exam.URL)
+                        .font(.headline)
+                        .padding(.leading, 10)
+                }
+            }
+        }
+        .toolbar{
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    Add_New_Exam_Data_Page()
+                } label: {
+                    Image(systemName: "plus")
+                }
+                
+            }
+        }
+    }
+}
+
+struct Add_New_Exam_Data_Page: View {
+    
+    @Environment(\.modelContext) var Context
+    @Environment(\.dismiss) var Dismiss
+    @State var ExamName: String = ""
+    @State var ExamURL: String = ""
+    
+    var body: some View {
+        VStack{
+            TextField("Exam Name", text: $ExamName)
+                .frame(height: 55)
+                .background(Color.black.opacity(0.05))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding()
+            TextField("Exam URL", text: $ExamURL)
+                .frame(height: 55)
+                .background(Color.black.opacity(0.05))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.none)
+                .keyboardType(.URL)
+                .padding()
+            Button(action: {SaveExamData()}, label: {
+                Text("Save")
+                    .frame(width: 200, height: 55)
+                    .background(Color.blue)
+                    .foregroundStyle(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+            })
+        }
+        .navigationTitle("Add New URL")
+        .padding()
+    }
+    func SaveExamData(){
+        let NewExamData = Exam_Data(id: UUID().uuidString, Exam_Name: ExamName, URL: ExamURL)
+        Context.insert(NewExamData)
+    }
+}
+
+struct About_Exam_Page: View {
+    
+    let Exam: Exam_Data
+    @Environment(\.modelContext) var Context
+    
+    var body: some View {
+        VStack{
+            HStack{
+                Text("URL for the exam:")
+                Text(Exam.URL)
+            }
+            .padding()
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Text("Open URL")
+                    .frame(width: 200, height: 55)
+                    .background(Color.gray)
+                    .foregroundStyle(Color.blue)
+                    .padding()
+                Button(action: {DeleteExamData(Exam)}, label: {
+                    Text("Delete URL")
+                        .frame(width: 200, height: 55)
+                        .background(Color.gray)
+                        .foregroundStyle(Color.blue)
+                        .padding()
+                })
+            })
+        }
+        .navigationTitle(Exam.Exam_Name)
+        .padding()
+    }
+    func DeleteExamData(_ item: Exam_Data){
+        Context.delete(Exam)
     }
 }
 
 #Preview {
-    List_of_Exam_URLs()
+    NavigationView{
+        List_of_Exam_URLs()
+    }
 }

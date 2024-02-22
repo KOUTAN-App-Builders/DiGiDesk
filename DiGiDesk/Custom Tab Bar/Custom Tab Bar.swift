@@ -47,13 +47,27 @@ struct Custom_Tab_Bar: View {
             Button(action: {selectedTab = .other}, label: {
                 VStack{
                     if selectedTab == .other{
-                        Image(systemName: "ellipsis.circle.fill")
-                            .frame(width: 24 , height: 24)
+                        Menu{
+                            NavigationLink {
+                                List_of_Exam_URLs()
+                            } label: {
+                                Text("Exam URL List")
+                            }
+                        }label:{
+                            VStack{
+                                Image(systemName: "ellipsis.circle.fill")
+                                    .frame(width: 24 , height: 24)
+                                Text("Other")
+                            }
+                        }
                     }else{
-                        Image(systemName: "ellipsis.circle")
-                            .frame(width: 24 , height: 24)
+                        VStack{
+                            Image(systemName: "ellipsis.circle")
+                                .frame(width: 24 , height: 24)
+                            Text("Other")
+                        }
                     }
-                    Text("Other")
+                    
                 }
                 .padding()
             })

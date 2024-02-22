@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 import SwiftData
-import UIKit
-import PDFKit
 
 
 @Model
