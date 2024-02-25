@@ -17,9 +17,11 @@
 		3C0D25AA2B581E1800FFC280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D25A92B581E1800FFC280 /* ContentView.swift */; };
 		3C0D25AC2B581E1900FFC280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AB2B581E1900FFC280 /* Assets.xcassets */; };
 		3C0D25AF2B581E1900FFC280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */; };
+		3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */; };
 		3C825B142B84A08300EA55CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C825B132B84A08300EA55CD /* Launch Screen.storyboard */; };
 		3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */; };
 		3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BDC2B5AA03B000F474D /* Book Data Manager.swift */; };
+		3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */; };
 		3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */; };
 		3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4142B596D3900EF4846 /* Calendar Page.swift */; };
 		3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */; };
@@ -61,9 +63,11 @@
 		3C0D25A92B581E1800FFC280 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C0D25AB2B581E1900FFC280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flash Card Creator Page.swift"; sourceTree = "<group>"; };
 		3C825B132B84A08300EA55CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add New Book Page.swift"; sourceTree = "<group>"; };
 		3CAC0BDC2B5AA03B000F474D /* Book Data Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Data Manager.swift"; sourceTree = "<group>"; };
+		3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timers Home Page.swift"; sourceTree = "<group>"; };
 		3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Shelf Page.swift"; sourceTree = "<group>"; };
 		3CDCF4142B596D3900EF4846 /* Calendar Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Page.swift"; sourceTree = "<group>"; };
 		3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Tab Bar.swift"; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				3C0AED6D2B660835004078C5 /* List of Exam URLs.swift */,
+				3CDAA7512B8A37C2005A0776 /* Timers */,
+				3C54815C2B88E81000F08AEF /* Flash Cards */,
 			);
 			path = "Views forOther Functionalities";
 			sourceTree = "<group>";
@@ -155,6 +161,22 @@
 				3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3C54815C2B88E81000F08AEF /* Flash Cards */ = {
+			isa = PBXGroup;
+			children = (
+				3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */,
+			);
+			path = "Flash Cards";
+			sourceTree = "<group>";
+		};
+		3CDAA7512B8A37C2005A0776 /* Timers */ = {
+			isa = PBXGroup;
+			children = (
+				3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */,
+			);
+			path = Timers;
 			sourceTree = "<group>";
 		};
 		3CDCF4102B596CBF00EF4846 /* Book Shelf */ = {
@@ -299,7 +321,9 @@
 				3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */,
 				3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */,
 				3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */,
+				3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
+				3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,7 +544,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +580,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

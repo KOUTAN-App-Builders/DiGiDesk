@@ -36,6 +36,9 @@ struct Add_New_Book_Page: View {
                          matching: .images,
                          photoLibrary: .shared()){
                 Label("Add Image", systemImage: "photo")
+                    .frame(width: 200, height: 55)
+                    .background(Color.yellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             if selectedPhotoData != nil{
                 Button(role: .destructive){
@@ -50,6 +53,9 @@ struct Add_New_Book_Page: View {
             }
             Button(action: {openFile.toggle()}, label: {
                 Text("Select PDF")
+                    .frame(width: 200, height: 55)
+                    .background(Color.yellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             })
             if selectedFileURL != nil, selectedPhotoData != nil{
                 Button(action: {AddBook(); Dismiss()}, label: {
