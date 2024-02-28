@@ -22,11 +22,10 @@ struct Timers_Home_Page: View {
                     Text("Pomodoro Timer")
                 }
                 NavigationLink {
-                    Repeatation_Timer_SetUp_Page()
+                    Repetition_Timer_SetUp_Page()
                 } label: {
-                    Text("Infinite Repetation Timer")
+                    Text("Infinite Repetition Timer")
                 }
-
                 NavigationLink {
                     Test_Sim_Timer_SetUp_Page()
                 } label: {
@@ -37,30 +36,8 @@ struct Timers_Home_Page: View {
     }
 }
 
-struct Normal_Timer_SetUp_Page: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
-
-struct Pomodoro_Timer_SetUp_Page: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
-
-struct Repeatation_Timer_SetUp_Page: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
-
-struct Test_Sim_Timer_SetUp_Page: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
-
 #Preview {
-    Timers_Home_Page()
+    NavigationView{
+        Timers_Home_Page()
+    }
 }
