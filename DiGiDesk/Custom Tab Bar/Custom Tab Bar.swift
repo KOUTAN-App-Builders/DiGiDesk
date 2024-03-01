@@ -9,7 +9,9 @@ import SwiftUI
 enum Tabs: Int{
     case bookshelf = 0
     case calendar = 1
-    case other = 2
+    case timers = 2
+    case flashCards = 3
+    
 }
 
 struct Custom_Tab_Bar: View {
@@ -44,32 +46,39 @@ struct Custom_Tab_Bar: View {
                 }
                 .padding()
             })
-            Button(action: {selectedTab = .other}, label: {
+            Button(action: {selectedTab = .timers}, label: {
                 VStack{
-                    if selectedTab == .other{
-                        Menu{
-                            NavigationLink {
-                                List_of_Exam_URLs()
-                            } label: {
-                                Text("Exam URL List")
-                            }
-                        }label:{
-                            VStack{
-                                Image(systemName: "ellipsis.circle.fill")
-                                    .frame(width: 24 , height: 24)
-                                Text("Other")
-                            }
+                    if selectedTab == .timers{
+                        VStack{
+                            Image(systemName: "timer.circle.fill")
+                                .frame(width: 24 , height: 24)
+                            Text("Timers")
                         }
                     }else{
                         VStack{
-                            Image(systemName: "ellipsis.circle")
+                            Image(systemName: "timer.circle")
                                 .frame(width: 24 , height: 24)
-                            Text("Other")
+                            Text("Timers")
                         }
                     }
-                    
                 }
-                .padding()
+            })
+            Button(action: {selectedTab = .flashCards}, label: {
+                VStack{
+                    if selectedTab == .flashCards{
+                        VStack{
+                            Image(systemName: "square.and.pencil.circle.fill")
+                                .frame(width: 24,height: 24)
+                            Text("Flash Cards")
+                        }
+                    }else{
+                        VStack{
+                            Image(systemName: "square.and.pencil.circle")
+                                .frame(width: 24, height: 24)
+                            Text("Flash Cards")
+                        }
+                    }
+                }
             })
         }
         .padding(.top)

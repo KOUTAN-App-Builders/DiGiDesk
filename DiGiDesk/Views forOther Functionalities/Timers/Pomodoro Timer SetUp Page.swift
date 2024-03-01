@@ -9,14 +9,17 @@ import SwiftUI
 
 struct Pomodoro_Timer_SetUp_Page: View {
     
+    @State private var InitialFocusTime: Int = 1500
     @State private var RemainingFocusTime: Int = 1500
+    @State private var InitialIntervalTime: Int = 300
     @State private var RemainingIntervalTime: Int = 300
     @State private var isTimerRunning: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack{
-            //CircularProgressViewStyle(tint: RemainingFocusTime / RemainingIntervalTime)
+            ProgressView(value: Double(RemainingFocusTime) / Double(InitialFocusTime))
+                .progressViewStyle(CircularProgressViewStyle())
             VStack{
                 Text(secondsToMinutesAndSeconds(RemainingFocusTime))
                     .font(.largeTitle)

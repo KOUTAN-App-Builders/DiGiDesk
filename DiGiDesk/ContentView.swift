@@ -19,6 +19,12 @@ struct ContentView: View {
             if selectedTab == .calendar{
                 CalendarView()
             }
+            if selectedTab == .timers{
+                Timers_Home_Page()
+            }
+            if selectedTab == .flashCards{
+                Flash_Card_Home_Page()
+            }
             Spacer()
             Custom_Tab_Bar(selectedTab: $selectedTab)
                 .padding(.top)
