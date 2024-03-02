@@ -37,13 +37,23 @@ struct Normal_Timer_SetUp_Page: View {
                     Text(secondsToMinutesAndSeconds(timeRemaining))
                         .font(.largeTitle)
                         .padding()
-                    Button(action: {timerRunning.toggle()}, label: {
-                        Text(timerRunning ? "Pause" : "Start")
-                            .padding()
-                            .foregroundStyle(Color.white)
-                            .background(timerRunning ? Color.red : Color.green)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                    })
+                    HStack{
+                        Button(action: {timerRunning.toggle()}, label: {
+                            Text(timerRunning ? "Pause" : "Start")
+                                .padding()
+                                .foregroundStyle(Color.white)
+                                .background(timerRunning ? Color.red : Color.green)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        })
+                        Button(action: {timeRemaining = initialTime}, label: {
+                            Image(systemName: "arrow.counterclockwise")
+                                .frame(width: 30, height: 30)
+                                .background(Color.green)
+                                .foregroundStyle(Color.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .padding()
+                        })
+                    }
                 }
             }
             Divider()
