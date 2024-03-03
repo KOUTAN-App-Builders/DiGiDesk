@@ -60,6 +60,8 @@ struct Normal_Timer_SetUp_Page: View {
             Text("Timer Settings")
                 .font(.largeTitle)
                 .bold()
+            Text("Configured Time Length: \(secondsToMinutesAndSeconds(initialTime))")
+                .font(.headline)
             Stepper{
                 Text("Adjust by Hour")
             }onIncrement: {
@@ -77,14 +79,6 @@ struct Normal_Timer_SetUp_Page: View {
             Stepper(value: $initialTime, in: 0...86399) {
                 Text("Adjust by Second")
             }
-            Button(action: {initialTime = 1500}, label: {
-                Text("Reset Timer")
-                    .frame(width: 200, height: 55)
-                    .background(Color.red)
-                    .foregroundStyle(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
-            })
         }
         .navigationTitle("Ordinary Timer")
         .padding(.horizontal)

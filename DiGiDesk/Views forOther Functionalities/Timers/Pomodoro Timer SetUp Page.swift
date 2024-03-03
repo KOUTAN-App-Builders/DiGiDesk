@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct Pomodoro_Timer_SetUp_Page: View {
     
@@ -15,85 +16,109 @@ struct Pomodoro_Timer_SetUp_Page: View {
     @State private var RemainingIntervalTime: Int = 300
     @State private var isTimerRunning: Bool = false
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    var audioPlayer: AVAudioPlayer?
     
     var body: some View {
-        VStack{
-            ZStack{
-                ProgressView(value: Double(RemainingFocusTime) / Double(InitialFocusTime))
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .padding()
-                VStack{
-                    Text(secondsToMinutesAndSeconds(RemainingFocusTime))
+        ZStack{
+            Color(shouldChangeBackgroundColor() ? .blue.opacity(0.3) : .green.opacity(0.5))
+                .ignoresSafeArea()
+            if isTimerRunning == false{
+                Color(.white)
+                    .ignoresSafeArea()
+            }
+            VStack{
+                ZStack{
+                    if shouldChangeBackgroundColor(){
+                        ProgressView(value: Double(RemainingFocusTime) / Double(InitialFocusTime))
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .padding()
+                    }else{
+                        ProgressView(value: Double(RemainingIntervalTime) / Double(InitialIntervalTime))
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .padding()
+                    }
+                    VStack{
+                        if shouldChangeBackgroundColor(){
+                            Text(secondsToMinutesAndSeconds(RemainingFocusTime))
+                                .font(.largeTitle)
+                                .padding()
+                        }else{
+                            Text(secondsToMinutesAndSeconds(RemainingIntervalTime))
+                                .font(.largeTitle)
+                                .padding()
+                        }
+                        HStack{
+                            Button(action: {isTimerRunning.toggle()}, label: {
+                                Text(isTimerRunning ? "Pause" : "Start")
+                                    .padding()
+                                    .foregroundStyle(Color.white)
+                                    .background(isTimerRunning ? Color.red : Color.green)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                            })
+                            Button(action: {RemainingFocusTime = InitialFocusTime}, label: {
+                                Image(systemName: "arrow.counterclockwise")
+                                    .frame(width: 30, height: 30)
+                                    .background(Color.green)
+                                    .foregroundStyle(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .padding()
+                            })
+                        }
+                    }
+                }
+                Divider()
+                ScrollView{
+                    Text("Timer Settings")
                         .font(.largeTitle)
-                        .padding()
-                    HStack{
-                        Button(action: {isTimerRunning.toggle()}, label: {
-                            Text(isTimerRunning ? "Pause" : "Start")
-                                .padding()
-                                .foregroundStyle(Color.white)
-                                .background(isTimerRunning ? Color.red : Color.green)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                        })
-                        Button(action: {RemainingFocusTime = InitialFocusTime}, label: {
-                            Image(systemName: "arrow.counterclockwise")
-                                .frame(width: 30, height: 30)
-                                .background(Color.green)
-                                .foregroundStyle(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .padding()
-                        })
+                        .bold()
+                    Text("Focus Time: \(secondsToMinutesAndSeconds(InitialFocusTime))")
+                        .font(.headline)
+                    Stepper{
+                        Text("Adjust by Hour")
+                    }onIncrement: {
+                        incrementFocusTimeByHour()
+                    }onDecrement: {
+                        decrementFocusTimeByHour()
+                    }
+                    Stepper{
+                        Text("Adjust by Minute")
+                    }onIncrement: {
+                        incrementFocusTimeByMinute()
+                    }onDecrement: {
+                        decrementFocusTimeByMinute()
+                    }
+                    Stepper(value: $InitialFocusTime, in: 0...86399) {
+                        Text("Adjust by Second")
+                    }
+                    Text("Interval Time: \(secondsToMinutesAndSeconds(InitialIntervalTime))")
+                        .font(.headline)
+                    Stepper{
+                        Text("Adjust by Hour")
+                    }onIncrement: {
+                        incrementIntervalTimeByHour()
+                    }onDecrement: {
+                        decrementIntervalTimeByHour()
+                    }
+                    Stepper{
+                        Text("Adjust by Minute")
+                    }onIncrement: {
+                        incrementIntervalTimeByMinute()
+                    }onDecrement: {
+                        decrementIntervalTimeByMinute()
+                    }
+                    Stepper(value: $InitialIntervalTime, in: 0...86399) {
+                        Text("Adjust by Second")
                     }
                 }
             }
-            Divider()
-            Text("Timer Settings")
-                .font(.largeTitle)
-                .bold()
-            Text("Focus Time: \(secondsToMinutesAndSeconds(InitialFocusTime))")
-                .font(.headline)
-            Stepper{
-                Text("Adjust by Hour")
-            }onIncrement: {
-                incrementFocusTimeByHour()
-            }onDecrement: {
-                decrementFocusTimeByHour()
-            }
-            Stepper{
-                Text("Adjust by Minute")
-            }onIncrement: {
-                incrementFocusTimeByMinute()
-            }onDecrement: {
-                decrementFocusTimeByMinute()
-            }
-            Stepper(value: $InitialFocusTime, in: 0...86399) {
-                Text("Adjust by Second")
-            }
-            Text("Interval Time: \(secondsToMinutesAndSeconds(InitialIntervalTime))")
-                .font(.headline)
-            Stepper{
-                Text("Adjust by Hour")
-            }onIncrement: {
-                incrementIntervalTimeByHour()
-            }onDecrement: {
-                decrementIntervalTimeByHour()
-            }
-            Stepper{
-                Text("Adjust by Minute")
-            }onIncrement: {
-                incrementIntervalTimeByMinute()
-            }onDecrement: {
-                decrementIntervalTimeByMinute()
-            }
-            Stepper(value: $InitialIntervalTime, in: 0...86399) {
-                Text("Adjust by Second")
-            }
+            .padding(.horizontal)
         }
         .navigationTitle("Pomodoro Timer")
-        .padding(.horizontal)
         .onReceive(timer){ _ in
             if isTimerRunning{
                 if RemainingFocusTime > 0{
                     RemainingFocusTime -= 1
+                    RemainingIntervalTime = InitialIntervalTime
                 }else{
                     if RemainingIntervalTime > 0{
                         RemainingIntervalTime -= 1
@@ -104,6 +129,7 @@ struct Pomodoro_Timer_SetUp_Page: View {
             }else{
                 isTimerRunning = false
                 RemainingFocusTime = InitialFocusTime
+                RemainingIntervalTime = InitialIntervalTime
             }
         }
     }
@@ -159,6 +185,18 @@ struct Pomodoro_Timer_SetUp_Page: View {
         InitialIntervalTime -= 60
         if InitialIntervalTime <= 0{
             InitialIntervalTime = 0
+        }
+    }
+    func shouldChangeBackgroundColor() -> Bool{
+        return RemainingFocusTime > 0
+    }
+    private mutating func playSound(){
+        guard let url = Bundle.main.url(forResource: "Japanese_School_Bell02-01(Slow-Long)audio", withExtension: "mp3")else{ return }
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }catch{
+            print("Error Playing Sound: \(error.localizedDescription)")
         }
     }
 }
