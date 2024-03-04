@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import ActivityKit
 
 struct Pomodoro_Timer_SetUp_Page: View {
     
@@ -16,7 +17,7 @@ struct Pomodoro_Timer_SetUp_Page: View {
     @State private var RemainingIntervalTime: Int = 300
     @State private var isTimerRunning: Bool = false
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
-    var audioPlayer: AVAudioPlayer?
+    @State private var audioPlayer: AVAudioPlayer?
     
     var body: some View {
         ZStack{
@@ -119,17 +120,20 @@ struct Pomodoro_Timer_SetUp_Page: View {
                 if RemainingFocusTime > 0{
                     RemainingFocusTime -= 1
                     RemainingIntervalTime = InitialIntervalTime
+                    if RemainingFocusTime == 0{
+                        playSound()
+                    }
                 }else{
                     if RemainingIntervalTime > 0{
                         RemainingIntervalTime -= 1
                     }else{
                         RemainingFocusTime = InitialFocusTime
+                        RemainingIntervalTime = InitialIntervalTime
+                        playSound()
                     }
                 }
             }else{
-                isTimerRunning = false
-                RemainingFocusTime = InitialFocusTime
-                RemainingIntervalTime = InitialIntervalTime
+                resetTimer()
             }
         }
     }
@@ -190,7 +194,7 @@ struct Pomodoro_Timer_SetUp_Page: View {
     func shouldChangeBackgroundColor() -> Bool{
         return RemainingFocusTime > 0
     }
-    private mutating func playSound(){
+    private func playSound(){
         guard let url = Bundle.main.url(forResource: "Japanese_School_Bell02-01(Slow-Long)audio", withExtension: "mp3")else{ return }
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: url)
@@ -198,6 +202,11 @@ struct Pomodoro_Timer_SetUp_Page: View {
         }catch{
             print("Error Playing Sound: \(error.localizedDescription)")
         }
+    }
+    private func resetTimer(){
+        isTimerRunning = false
+        RemainingFocusTime = InitialFocusTime
+        RemainingIntervalTime = InitialIntervalTime
     }
 }
 

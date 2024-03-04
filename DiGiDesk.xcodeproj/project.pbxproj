@@ -21,6 +21,7 @@
 		3C0D25AA2B581E1800FFC280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D25A92B581E1800FFC280 /* ContentView.swift */; };
 		3C0D25AC2B581E1900FFC280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AB2B581E1900FFC280 /* Assets.xcassets */; };
 		3C0D25AF2B581E1900FFC280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */; };
+		3C50CFAA2B95B25A00A9A6A3 /* Timer Tracking Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C50CFA92B95B25A00A9A6A3 /* Timer Tracking Attributes.swift */; };
 		3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */; };
 		3C825B142B84A08300EA55CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C825B132B84A08300EA55CD /* Launch Screen.storyboard */; };
 		3C991E4D2B93F7AA006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */; };
@@ -72,6 +73,7 @@
 		3C0D25A92B581E1800FFC280 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C0D25AB2B581E1900FFC280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C50CFA92B95B25A00A9A6A3 /* Timer Tracking Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer Tracking Attributes.swift"; sourceTree = "<group>"; };
 		3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flash Card Creator Page.swift"; sourceTree = "<group>"; };
 		3C825B132B84A08300EA55CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Japanese_School_Bell02-01(Slow-Long)audio.mp3"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				3C0CE7542B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift */,
 				3C0CE7582B8F7AF6001B42CD /* Repetition Timer SetUp Page.swift */,
 				3C0CE75A2B8F7B34001B42CD /* Test Sim Timer SetUp Page.swift */,
+				3C50CFA92B95B25A00A9A6A3 /* Timer Tracking Attributes.swift */,
 			);
 			path = Timers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
 				3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */,
+				3C50CFAA2B95B25A00A9A6A3 /* Timer Tracking Attributes.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
