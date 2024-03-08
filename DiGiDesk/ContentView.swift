@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var selectedTab: Tabs = .bookshelf
     
     var body: some View {
+#if os(iOS)
         VStack {
             if selectedTab == .bookshelf{
                 Book_Shelf_Page()
@@ -31,6 +32,7 @@ struct ContentView: View {
                 .ignoresSafeArea(edges: .bottom)
         }
         .padding()
+#endif
     }
 }
 

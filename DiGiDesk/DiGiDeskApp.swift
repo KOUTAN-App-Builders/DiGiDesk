@@ -15,6 +15,7 @@ struct DiGiDeskApp: App {
             NavigationView{
                 ContentView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
         .modelContainer(for: Book_Data_Model.self)
     }
