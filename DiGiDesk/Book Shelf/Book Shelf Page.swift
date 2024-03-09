@@ -76,6 +76,7 @@ struct Book_Shelf_Page: View {
                 }
             }
             .padding()
+            .navigationTitle("BookShelf")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -105,7 +106,7 @@ struct About_Book_Page: View {
                     .shadow(radius: 10)
             }
             NavigationLink {
-                PDFViewer(Book: Book)
+                PDFViewWrapper(pdfURL: Book.Book_Data_File_URL!)
             } label: {
                 Text("Open Book PDF File")
                     .frame(width: 200, height: 55)
@@ -139,6 +140,7 @@ struct PDFViewWrapper: UIViewRepresentable{
         return PDFView
     }
     func updateUIView(_ uiView: PDFView, context: Context) {
+        uiView.document = PDFDocument(url: pdfURL)
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0422A52B9CAD400076C193 /* Watch Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0422A42B9CAD400076C193 /* Watch Connector.swift */; };
+		3C0422A72B9CAE9A0076C193 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0422A62B9CAE9A0076C193 /* WatchConnectivity.framework */; };
 		3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AED6D2B660835004078C5 /* List of Exam URLs.swift */; };
 		3C0CE7552B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE7542B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift */; };
 		3C0CE7572B8F7A75001B42CD /* Normal Timer SetUp Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE7562B8F7A75001B42CD /* Normal Timer SetUp Page.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C0422A42B9CAD400076C193 /* Watch Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Watch Connector.swift"; sourceTree = "<group>"; };
+		3C0422A62B9CAE9A0076C193 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		3C0AED6D2B660835004078C5 /* List of Exam URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List of Exam URLs.swift"; sourceTree = "<group>"; };
 		3C0CE7542B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pomodoro Timer SetUp Page.swift"; sourceTree = "<group>"; };
 		3C0CE7562B8F7A75001B42CD /* Normal Timer SetUp Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Normal Timer SetUp Page.swift"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			files = (
 				3CB4A1362B96C82600D74657 /* SwiftUI.framework in Frameworks */,
 				3CB4A1342B96C82600D74657 /* WidgetKit.framework in Frameworks */,
+				3C0422A72B9CAE9A0076C193 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +192,7 @@
 				3CDCF4102B596CBF00EF4846 /* Book Shelf */,
 				3CDCF4132B596D0F00EF4846 /* Calendar */,
 				3C0AED6C2B6607BA004078C5 /* Views forOther Functionalities */,
+				3C0422A42B9CAD400076C193 /* Watch Connector.swift */,
 				3C825B132B84A08300EA55CD /* Launch Screen.storyboard */,
 				3C0D25992B581E1800FFC280 /* Assets.xcassets */,
 				3C0D259B2B581E1800FFC280 /* Preview Content */,
@@ -233,6 +239,7 @@
 		3CB4A1322B96C82600D74657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C0422A62B9CAE9A0076C193 /* WatchConnectivity.framework */,
 				3CB4A1332B96C82600D74657 /* WidgetKit.framework */,
 				3CB4A1352B96C82600D74657 /* SwiftUI.framework */,
 			);
@@ -444,6 +451,7 @@
 				3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */,
 				3C0CE7592B8F7AF6001B42CD /* Repetition Timer SetUp Page.swift in Sources */,
 				3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */,
+				3C0422A52B9CAD400076C193 /* Watch Connector.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
 				3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
