@@ -36,6 +36,8 @@
 		3CB4A13F2B96C82600D74657 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4A13E2B96C82600D74657 /* AppIntent.swift */; };
 		3CB4A1412B96C82700D74657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB4A1402B96C82700D74657 /* Assets.xcassets */; };
 		3CB4A1452B96C82700D74657 /* DiGiDesk Timer WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3CB4A1312B96C82600D74657 /* DiGiDesk Timer WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3CBDD2812B9DF83500FFFE87 /* Study Rings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */; };
+		3CBDD2832B9E032500FFFE87 /* Calendar Task Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */; };
 		3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */; };
 		3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */; };
 		3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4142B596D3900EF4846 /* Calendar Page.swift */; };
@@ -117,6 +119,8 @@
 		3CB4A13E2B96C82600D74657 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		3CB4A1402B96C82700D74657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CB4A1422B96C82700D74657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Study Rings View.swift"; sourceTree = "<group>"; };
+		3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task Manager.swift"; sourceTree = "<group>"; };
 		3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timers Home Page.swift"; sourceTree = "<group>"; };
 		3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Shelf Page.swift"; sourceTree = "<group>"; };
 		3CDCF4142B596D3900EF4846 /* Calendar Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Page.swift"; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				3CDCF4142B596D3900EF4846 /* Calendar Page.swift */,
+				3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */,
+				3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -444,10 +450,12 @@
 				3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */,
 				3C0CE7552B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift in Sources */,
 				3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */,
+				3CBDD2832B9E032500FFFE87 /* Calendar Task Manager.swift in Sources */,
 				3C0CE75B2B8F7B34001B42CD /* Test Sim Timer SetUp Page.swift in Sources */,
 				3C0CE7572B8F7A75001B42CD /* Normal Timer SetUp Page.swift in Sources */,
 				3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */,
 				3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */,
+				3CBDD2812B9DF83500FFFE87 /* Study Rings View.swift in Sources */,
 				3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */,
 				3C0CE7592B8F7AF6001B42CD /* Repetition Timer SetUp Page.swift in Sources */,
 				3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */,
