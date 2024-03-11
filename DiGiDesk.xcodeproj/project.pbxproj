@@ -24,6 +24,9 @@
 		3C0D25AC2B581E1900FFC280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AB2B581E1900FFC280 /* Assets.xcassets */; };
 		3C0D25AF2B581E1900FFC280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */; };
 		3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */; };
+		3C575FDE2B9F514E00D515D7 /* Task Form ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C575FDD2B9F514E00D515D7 /* Task Form ViewModel.swift */; };
+		3C575FE02B9F519B00D515D7 /* Task Form Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C575FDF2B9F519B00D515D7 /* Task Form Type.swift */; };
+		3C575FE32B9F528F00D515D7 /* Task Form View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C575FE12B9F525A00D515D7 /* Task Form View.swift */; };
 		3C825B142B84A08300EA55CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C825B132B84A08300EA55CD /* Launch Screen.storyboard */; };
 		3C991E4D2B93F7AA006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */; };
 		3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */; };
@@ -105,6 +108,9 @@
 		3C0D25AB2B581E1900FFC280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flash Card Creator Page.swift"; sourceTree = "<group>"; };
+		3C575FDD2B9F514E00D515D7 /* Task Form ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Form ViewModel.swift"; sourceTree = "<group>"; };
+		3C575FDF2B9F519B00D515D7 /* Task Form Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Form Type.swift"; sourceTree = "<group>"; };
+		3C575FE12B9F525A00D515D7 /* Task Form View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Form View.swift"; sourceTree = "<group>"; };
 		3C825B132B84A08300EA55CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Japanese_School_Bell02-01(Slow-Long)audio.mp3"; sourceTree = "<group>"; };
 		3CA06F772B9768D0003603B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -240,6 +246,16 @@
 			path = "Flash Cards";
 			sourceTree = "<group>";
 		};
+		3C575FDC2B9F512B00D515D7 /* Task Forms */ = {
+			isa = PBXGroup;
+			children = (
+				3C575FDD2B9F514E00D515D7 /* Task Form ViewModel.swift */,
+				3C575FE12B9F525A00D515D7 /* Task Form View.swift */,
+				3C575FDF2B9F519B00D515D7 /* Task Form Type.swift */,
+			);
+			path = "Task Forms";
+			sourceTree = "<group>";
+		};
 		3CB4A1322B96C82600D74657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +308,7 @@
 				3CDCF4142B596D3900EF4846 /* Calendar Page.swift */,
 				3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */,
 				3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */,
+				3C575FDC2B9F512B00D515D7 /* Task Forms */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -457,10 +474,13 @@
 				3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */,
 				3CBDD2812B9DF83500FFFE87 /* Study Rings View.swift in Sources */,
 				3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */,
+				3C575FDE2B9F514E00D515D7 /* Task Form ViewModel.swift in Sources */,
+				3C575FE02B9F519B00D515D7 /* Task Form Type.swift in Sources */,
 				3C0CE7592B8F7AF6001B42CD /* Repetition Timer SetUp Page.swift in Sources */,
 				3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */,
 				3C0422A52B9CAD400076C193 /* Watch Connector.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
+				3C575FE32B9F528F00D515D7 /* Task Form View.swift in Sources */,
 				3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
 			);

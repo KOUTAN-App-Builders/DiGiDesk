@@ -12,7 +12,25 @@ struct ContentView: View {
     @State var selectedTab: Tabs = .bookshelf
     
     var body: some View {
-#if os(iOS)
+        TabView{
+            Book_Shelf_Page()
+                .tabItem {
+                    Label("Books", systemImage: "books.vertical")
+                }
+            CalendarView()
+                .tabItem {
+                    Label("Calendar", systemImage: "calendar")
+                }
+            Timers_Home_Page()
+                .tabItem {
+                    Label("Timers", systemImage: "timer")
+                }
+            List_of_Exam_URLs()
+                .tabItem {
+                    Label("Exam Data", systemImage: "square.and.pencil")
+                }
+        }
+        /*
         VStack {
             if selectedTab == .bookshelf{
                 Book_Shelf_Page()
@@ -31,8 +49,7 @@ struct ContentView: View {
                 .padding(.top)
                 .ignoresSafeArea(edges: .bottom)
         }
-        .padding()
-#endif
+        .padding()*/
     }
 }
 
