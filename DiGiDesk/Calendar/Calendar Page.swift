@@ -2,35 +2,40 @@
 //  Calendar Page.swift
 //  DiGiDesk
 //
-//  Created by 加納塙大 Editor on 2024/01/18.
+//  Created by 加納塙大 Editor on 2024/03/12.
 //
 
 import SwiftUI
 
-struct CalendarView: View {
-    
-    @State private var isListViewSelected: Bool = false
-    
+struct Calendar_Page: View {
     var body: some View {
         VStack{
-            HStack{
-                Button(action: {isListViewSelected = false}, label: {
-                    Image(systemName: isListViewSelected ? "calendar.circle" : "calendar.circle.fill")
-                })
-                Button(action: {isListViewSelected = true}, label: {
-                    Image(systemName: isListViewSelected ? "list.bullet.rectangle.fill" : "list.bullet.rectangle")
-                })
-                .padding(.leading)
-            }
-            if isListViewSelected == false{
-                
-            }else{
-                
-            }
+            Calendar_View(interval: DateInterval(start: .distantPast, end: .distantFuture))
         }
+        .navigationTitle("Calendar Page")
     }
 }
+
+struct Calendar_View: UIViewRepresentable{
+    
+    let interval: DateInterval
+    
+    func makeUIView(context: Context) -> UICalendarView {
+        let view = UICalendarView()
+        view.calendar = Calendar(identifier: .gregorian)
+        view.availableDateRange = interval
+        return view
+    }
+    
+    func updateUIView(_ uiView: UICalendarView, context: Context) {
+        
+    }
+    
+    
+}
+
 #Preview {
-    CalendarView()
-        .environmentObject(Calendar_Tasks(preview: true))
+    NavigationView{
+        Calendar_Page()
+    }
 }

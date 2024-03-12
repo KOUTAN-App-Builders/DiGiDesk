@@ -14,7 +14,6 @@ struct Normal_Timer_SetUp_Page: View {
     @State private var StudiedTime: Int = 1500
     @State private var timerRunning: Bool = false
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
-    @Environment(\.modelContext) var Context
     // Current Date
     /*
      var dateFormatter: DateFormatter{
@@ -125,10 +124,6 @@ struct Normal_Timer_SetUp_Page: View {
         if initialTime <= 0{
             initialTime = 0
         }
-    }
-    func updateStudiedTime(_ item: Study_Rings_Data){
-        item.CurrentStudyHours += StudiedTime
-        try? Context.save()
     }
 }
 

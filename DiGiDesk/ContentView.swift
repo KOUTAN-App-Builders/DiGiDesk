@@ -12,12 +12,12 @@ struct ContentView: View {
     @State var selectedTab: Tabs = .bookshelf
     
     var body: some View {
-        TabView{
+        /*TabView{
             Book_Shelf_Page()
                 .tabItem {
                     Label("Books", systemImage: "books.vertical")
                 }
-            CalendarView()
+            EmptyView()
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
@@ -29,14 +29,13 @@ struct ContentView: View {
                 .tabItem {
                     Label("Exam Data", systemImage: "square.and.pencil")
                 }
-        }
-        /*
+        }*/
         VStack {
             if selectedTab == .bookshelf{
                 Book_Shelf_Page()
             }
             if selectedTab == .calendar{
-                CalendarView()
+                Calendar_Page()
             }
             if selectedTab == .timers{
                 Timers_Home_Page()
@@ -49,10 +48,12 @@ struct ContentView: View {
                 .padding(.top)
                 .ignoresSafeArea(edges: .bottom)
         }
-        .padding()*/
+        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    NavigationView{
+        ContentView()
+    }
 }

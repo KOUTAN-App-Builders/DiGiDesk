@@ -23,10 +23,13 @@
 		3C0D25AA2B581E1800FFC280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D25A92B581E1800FFC280 /* ContentView.swift */; };
 		3C0D25AC2B581E1900FFC280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AB2B581E1900FFC280 /* Assets.xcassets */; };
 		3C0D25AF2B581E1900FFC280 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */; };
+		3C40189D2BA0672F002423F6 /* Calendar Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40189C2BA0672F002423F6 /* Calendar Page.swift */; };
 		3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */; };
-		3C575FDE2B9F514E00D515D7 /* Task Form ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C575FDD2B9F514E00D515D7 /* Task Form ViewModel.swift */; };
-		3C575FE02B9F519B00D515D7 /* Task Form Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C575FDF2B9F519B00D515D7 /* Task Form Type.swift */; };
-		3C575FE32B9F528F00D515D7 /* Task Form View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C575FE12B9F525A00D515D7 /* Task Form View.swift */; };
+		3C5B1D372BA09F6700B18EB6 /* Calendar Task Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D362BA09F6700B18EB6 /* Calendar Task Model.swift */; };
+		3C5B1D392BA09FE500B18EB6 /* Calendar Task ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D382BA09FE500B18EB6 /* Calendar Task ViewModel.swift */; };
+		3C5B1D3B2BA0A35200B18EB6 /* Calendar Task List View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3A2BA0A35200B18EB6 /* Calendar Task List View.swift */; };
+		3C5B1D3D2BA0A5D500B18EB6 /* Update Calendar Task View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */; };
+		3C5B1D3F2BA0A6A200B18EB6 /* Create Calendar Task View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */; };
 		3C825B142B84A08300EA55CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C825B132B84A08300EA55CD /* Launch Screen.storyboard */; };
 		3C991E4D2B93F7AA006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */; };
 		3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */; };
@@ -39,11 +42,8 @@
 		3CB4A13F2B96C82600D74657 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4A13E2B96C82600D74657 /* AppIntent.swift */; };
 		3CB4A1412B96C82700D74657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB4A1402B96C82700D74657 /* Assets.xcassets */; };
 		3CB4A1452B96C82700D74657 /* DiGiDesk Timer WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3CB4A1312B96C82600D74657 /* DiGiDesk Timer WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3CBDD2812B9DF83500FFFE87 /* Study Rings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */; };
-		3CBDD2832B9E032500FFFE87 /* Calendar Task Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */; };
 		3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */; };
 		3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */; };
-		3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCF4142B596D3900EF4846 /* Calendar Page.swift */; };
 		3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,10 +107,13 @@
 		3C0D25A92B581E1800FFC280 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C0D25AB2B581E1900FFC280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C40189C2BA0672F002423F6 /* Calendar Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Page.swift"; sourceTree = "<group>"; };
 		3C54815A2B88E4FB00F08AEF /* Flash Card Creator Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flash Card Creator Page.swift"; sourceTree = "<group>"; };
-		3C575FDD2B9F514E00D515D7 /* Task Form ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Form ViewModel.swift"; sourceTree = "<group>"; };
-		3C575FDF2B9F519B00D515D7 /* Task Form Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Form Type.swift"; sourceTree = "<group>"; };
-		3C575FE12B9F525A00D515D7 /* Task Form View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Form View.swift"; sourceTree = "<group>"; };
+		3C5B1D362BA09F6700B18EB6 /* Calendar Task Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task Model.swift"; sourceTree = "<group>"; };
+		3C5B1D382BA09FE500B18EB6 /* Calendar Task ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task ViewModel.swift"; sourceTree = "<group>"; };
+		3C5B1D3A2BA0A35200B18EB6 /* Calendar Task List View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task List View.swift"; sourceTree = "<group>"; };
+		3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Update Calendar Task View.swift"; sourceTree = "<group>"; };
+		3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Calendar Task View.swift"; sourceTree = "<group>"; };
 		3C825B132B84A08300EA55CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Japanese_School_Bell02-01(Slow-Long)audio.mp3"; sourceTree = "<group>"; };
 		3CA06F772B9768D0003603B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -125,11 +128,8 @@
 		3CB4A13E2B96C82600D74657 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		3CB4A1402B96C82700D74657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CB4A1422B96C82700D74657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Study Rings View.swift"; sourceTree = "<group>"; };
-		3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task Manager.swift"; sourceTree = "<group>"; };
 		3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timers Home Page.swift"; sourceTree = "<group>"; };
 		3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Shelf Page.swift"; sourceTree = "<group>"; };
-		3CDCF4142B596D3900EF4846 /* Calendar Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Page.swift"; sourceTree = "<group>"; };
 		3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Tab Bar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,16 +246,6 @@
 			path = "Flash Cards";
 			sourceTree = "<group>";
 		};
-		3C575FDC2B9F512B00D515D7 /* Task Forms */ = {
-			isa = PBXGroup;
-			children = (
-				3C575FDD2B9F514E00D515D7 /* Task Form ViewModel.swift */,
-				3C575FE12B9F525A00D515D7 /* Task Form View.swift */,
-				3C575FDF2B9F519B00D515D7 /* Task Form Type.swift */,
-			);
-			path = "Task Forms";
-			sourceTree = "<group>";
-		};
 		3CB4A1322B96C82600D74657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,10 +295,12 @@
 		3CDCF4132B596D0F00EF4846 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				3CDCF4142B596D3900EF4846 /* Calendar Page.swift */,
-				3CBDD2802B9DF83500FFFE87 /* Study Rings View.swift */,
-				3CBDD2822B9E032500FFFE87 /* Calendar Task Manager.swift */,
-				3C575FDC2B9F512B00D515D7 /* Task Forms */,
+				3C40189C2BA0672F002423F6 /* Calendar Page.swift */,
+				3C5B1D362BA09F6700B18EB6 /* Calendar Task Model.swift */,
+				3C5B1D382BA09FE500B18EB6 /* Calendar Task ViewModel.swift */,
+				3C5B1D3A2BA0A35200B18EB6 /* Calendar Task List View.swift */,
+				3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */,
+				3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -394,7 +386,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					3C0D25912B581E1700FFC280 = {
 						CreatedOnToolsVersion = 15.2;
@@ -464,23 +456,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0D25982B581E1700FFC280 /* ContentView.swift in Sources */,
+				3C5B1D3D2BA0A5D500B18EB6 /* Update Calendar Task View.swift in Sources */,
 				3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */,
+				3C5B1D372BA09F6700B18EB6 /* Calendar Task Model.swift in Sources */,
 				3C0CE7552B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift in Sources */,
-				3CDCF4152B596D3900EF4846 /* Calendar Page.swift in Sources */,
-				3CBDD2832B9E032500FFFE87 /* Calendar Task Manager.swift in Sources */,
 				3C0CE75B2B8F7B34001B42CD /* Test Sim Timer SetUp Page.swift in Sources */,
 				3C0CE7572B8F7A75001B42CD /* Normal Timer SetUp Page.swift in Sources */,
 				3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */,
 				3C0AED6E2B660835004078C5 /* List of Exam URLs.swift in Sources */,
-				3CBDD2812B9DF83500FFFE87 /* Study Rings View.swift in Sources */,
 				3CDCF4122B596D0200EF4846 /* Book Shelf Page.swift in Sources */,
-				3C575FDE2B9F514E00D515D7 /* Task Form ViewModel.swift in Sources */,
-				3C575FE02B9F519B00D515D7 /* Task Form Type.swift in Sources */,
 				3C0CE7592B8F7AF6001B42CD /* Repetition Timer SetUp Page.swift in Sources */,
 				3C54815D2B88E83500F08AEF /* Flash Card Creator Page.swift in Sources */,
 				3C0422A52B9CAD400076C193 /* Watch Connector.swift in Sources */,
+				3C5B1D3B2BA0A35200B18EB6 /* Calendar Task List View.swift in Sources */,
+				3C5B1D3F2BA0A6A200B18EB6 /* Create Calendar Task View.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
-				3C575FE32B9F528F00D515D7 /* Task Form View.swift in Sources */,
+				3C40189D2BA0672F002423F6 /* Calendar Page.swift in Sources */,
+				3C5B1D392BA09FE500B18EB6 /* Calendar Task ViewModel.swift in Sources */,
 				3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
 			);
@@ -556,6 +548,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -617,6 +610,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

@@ -11,13 +11,13 @@ import SwiftData
 @main
 struct DiGiDeskApp: App {
     
-    @StateObject var calendarTasks = Calendar_Tasks(preview: true)
+    //@StateObject var calendarTasks = Calendar_Tasks(preview: true)
     
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 ContentView()
-                    .environmentObject(calendarTasks)
+                    //.environmentObject(calendarTasks)
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }

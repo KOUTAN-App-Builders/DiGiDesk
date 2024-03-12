@@ -19,7 +19,6 @@ struct Pomodoro_Timer_SetUp_Page: View {
     @State private var isTimerRunning: Bool = false
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     @State private var audioPlayer: AVAudioPlayer?
-    @Environment(\.modelContext) var Context
     
     var body: some View {
         ZStack{
@@ -205,10 +204,6 @@ struct Pomodoro_Timer_SetUp_Page: View {
         }catch{
             print("Error Playing Sound: \(error.localizedDescription)")
         }
-    }
-    func updateStudiedTime(_ item: Study_Rings_Data){
-        item.CurrentStudyHours += StudiedTime
-        try? Context.save()
     }
     private func resetTimer(){
         isTimerRunning = false
