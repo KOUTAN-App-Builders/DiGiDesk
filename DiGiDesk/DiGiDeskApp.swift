@@ -10,17 +10,29 @@ import SwiftData
 
 @main
 struct DiGiDeskApp: App {
+    /*
+    var Container: ModelContainer
     
-    //@StateObject var calendarTasks = Calendar_Tasks(preview: true)
+    init(){
+        do{
+            let config1 = ModelConfiguration(for: Book_Data_Model.self)
+            let config2 = ModelConfiguration(for: Study_Rings_Data.self)
+            let config3 = ModelConfiguration(for: Exam_Data.self)
+            let config4 = ModelConfiguration(for: Flash_Card_Data.self)
+            
+            Container = try ModelContainer(for: Book_Data_Model.self, Study_Rings_Data.self, Exam_Data.self, Flash_Card_Data.self , configurations: config1, config2, config3, config4)
+        }catch{
+            fatalError("Failed to configure SwiftData container.")
+        }
+    }*/
     
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 ContentView()
-                    //.environmentObject(calendarTasks)
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
-        .modelContainer(for: Book_Data_Model.self)
+        .modelContainer(for: [Book_Data_Model.self, Study_Rings_Data.self, Exam_Data.self, Flash_Card_Data.self, Task_Data.self])
     }
 }

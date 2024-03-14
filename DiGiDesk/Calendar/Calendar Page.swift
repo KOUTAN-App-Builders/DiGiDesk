@@ -13,6 +13,16 @@ struct Calendar_Page: View {
             Calendar_View(interval: DateInterval(start: .distantPast, end: .distantFuture))
         }
         .navigationTitle("Calendar Page")
+        .toolbar{
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    Create_Calendar_Task_View()
+                } label: {
+                    Image(systemName: "plus")
+                }
+
+            }
+        }
     }
 }
 

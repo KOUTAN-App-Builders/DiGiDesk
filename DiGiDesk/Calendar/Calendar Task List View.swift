@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Calendar_Task_List_View: View {
     
-    @ObservedObject var viewModel: Calendar_Task_ViewModel
+    @Query private var TaskData: [Task_Data]
+    @Environment(\.modelContext) var Context
+    
+    @State private var selectedTaskCompletionState: Bool = false
     
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
@@ -20,31 +24,31 @@ struct Calendar_Task_List_View: View {
     
     var body: some View {
         List{
-            ForEach(viewModel.tasks){ task in
+            ForEach(TaskData){ task in
                 HStack{
-                    Button(action: {}, label: {
-                        Image(systemName: task.isTaskCompleted ? "checkmark.circle" : "circle")
-                    })
+                    Button{
+                        selectedTaskCompletionState = task.isTaskCompleted
+                        selectedTaskCompletionState.toggle()
+                    } label: {
+                        Image(systemName: task.isTaskCompleted ? "check.circle" : "circle")
+                    }
                     VStack{
                         Text(task.task_Name)
                             .font(.headline)
-                        Text("Due: \(task.task_Due_Date, formatter: dateFormatter)")
+                        Text("Due Date: \(task.task_Due_Date, formatter: dateFormatter)")
+                            .font(.subheadline)
                     }
+                    Spacer()
                     NavigationLink {
-                        Update_Calendar_Task_View()
+                        Update_Calendar_Task_View(SelectedTask: task)
                     } label: {
                         Image(systemName: "info.circle")
                     }
+
                 }
             }
-            .onDelete(perform: { indexSet in
-                viewModel.deleteTask(viewModel.tasks[indexSet.first!])
-            })
         }
         .navigationTitle("Task List")
-        .onAppear{
-            viewModel.fetchTasks()
-        }
         .toolbar{
             ToolbarItem(placement: .topBarLeading) {
                 EditButton()
@@ -58,10 +62,15 @@ struct Calendar_Task_List_View: View {
             }
         }
     }
+    func updateTaskCompletion(_ task: Task_Data){
+        task.isTaskCompleted = selectedTaskCompletionState
+        
+        try? Context.save()
+    }
 }
 
 #Preview {
     NavigationView{
-        Calendar_Task_List_View(viewModel: Calendar_Task_ViewModel())
+        Calendar_Task_List_View()
     }
 }

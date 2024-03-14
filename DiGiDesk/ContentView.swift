@@ -35,7 +35,7 @@ struct ContentView: View {
                 Book_Shelf_Page()
             }
             if selectedTab == .calendar{
-                Calendar_Page()
+                Task_Calendar_List_Combined_Page()
             }
             if selectedTab == .timers{
                 Timers_Home_Page()
@@ -45,7 +45,6 @@ struct ContentView: View {
             }
             Spacer()
             Custom_Tab_Bar(selectedTab: $selectedTab)
-                .padding(.top)
                 .ignoresSafeArea(edges: .bottom)
         }
         .padding()

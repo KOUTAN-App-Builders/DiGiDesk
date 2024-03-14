@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Task: Identifiable, Codable{
+@Model
+class Task_Data: Identifiable{
     let id: String
-    let task_Name: String
-    let task_Due_Date: Date
-    let isTaskCompleted: Bool
+    var task_Name: String
+    var task_Due_Date: Date
+    var isTaskCompleted: Bool
     
     init(id: String, task_Name: String, task_Due_Date: Date, isTaskCompleted: Bool) {
         self.id = UUID().uuidString

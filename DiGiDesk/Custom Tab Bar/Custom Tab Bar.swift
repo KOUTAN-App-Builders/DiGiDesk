@@ -29,7 +29,7 @@ struct Custom_Tab_Bar: View {
                         Image(systemName: "books.vertical")
                             .frame(width: 24 , height: 24)
                     }
-                    Text("Bookshelf")
+                    Text("Books")
                 }
                 .padding()
             })
@@ -69,19 +69,18 @@ struct Custom_Tab_Bar: View {
                         VStack{
                             Image(systemName: "square.and.pencil.circle.fill")
                                 .frame(width: 24,height: 24)
-                            Text("Flash Cards")
+                            Text("Cards")
                         }
                     }else{
                         VStack{
                             Image(systemName: "square.and.pencil.circle")
                                 .frame(width: 24, height: 24)
-                            Text("Flash Cards")
+                            Text("Cards")
                         }
                     }
                 }
             })
         }
-        .padding(.top)
     }
 }
 
