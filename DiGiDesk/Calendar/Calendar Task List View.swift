@@ -29,8 +29,9 @@ struct Calendar_Task_List_View: View {
                     Button{
                         selectedTaskCompletionState = task.isTaskCompleted
                         selectedTaskCompletionState.toggle()
+                        updateTaskCompletion(task)
                     } label: {
-                        Image(systemName: task.isTaskCompleted ? "check.circle" : "circle")
+                        Image(systemName: task.isTaskCompleted ? "checkmark.circle" : "circle")
                     }
                     VStack{
                         Text(task.task_Name)
@@ -43,8 +44,14 @@ struct Calendar_Task_List_View: View {
                         Update_Calendar_Task_View(SelectedTask: task)
                     } label: {
                         Image(systemName: "info.circle")
+                            .foregroundStyle(Color.blue)
+                            .padding(.leading)
                     }
-
+                    .swipeActions{
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            Context.delete(task)
+                        }
+                    }
                 }
             }
         }

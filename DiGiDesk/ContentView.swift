@@ -43,6 +43,9 @@ struct ContentView: View {
             if selectedTab == .flashCards{
                 Flash_Card_Home_Page()
             }
+            if selectedTab == .examData{
+                List_of_Exam_URLs()
+            }
             Spacer()
             Custom_Tab_Bar(selectedTab: $selectedTab)
                 .ignoresSafeArea(edges: .bottom)

@@ -18,30 +18,32 @@ struct Update_Calendar_Task_View: View {
     @Environment(\.dismiss) var Dismiss
     
     var body: some View {
-        VStack{
-            TextField("New Task Name", text: $updated_Task_Name)
-                .frame(height: 55)
-                .background(Color.black.opacity(0.05))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-            DatePicker("New Due Date for the Task", selection: $updated_Task_DueDate, displayedComponents: .date)
-            Button(action: {updateTask(SelectedTask); Dismiss()}, label: {
-                Text("Update Task")
-                    .frame(width: 200, height: 55)
-                    .background(Color.blue)
-                    .foregroundStyle(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
-            })
-            Button(action: {deleteTask(SelectedTask); Dismiss()}, label: {
-                Text("Delete Task")
-                    .frame(width: 200, height: 55)
+        NavigationStack{
+            VStack{
+                TextField("New Task Name", text: $updated_Task_Name)
+                    .frame(height: 55)
                     .background(Color.black.opacity(0.05))
-                    .foregroundStyle(Color.red)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
-            })
-            .padding()
+                DatePicker("New Due Date for the Task", selection: $updated_Task_DueDate, displayedComponents: .date)
+                Button(action: {updateTask(SelectedTask); Dismiss()}, label: {
+                    Text("Update Task")
+                        .frame(width: 200, height: 55)
+                        .background(Color.blue)
+                        .foregroundStyle(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                })
+                Button(action: {deleteTask(SelectedTask); Dismiss()}, label: {
+                    Text("Delete Task")
+                        .frame(width: 200, height: 55)
+                        .background(Color.black.opacity(0.05))
+                        .foregroundStyle(Color.red)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                })
+                .padding()
+            }
         }
     }
     func updateTask(_ task: Task_Data){

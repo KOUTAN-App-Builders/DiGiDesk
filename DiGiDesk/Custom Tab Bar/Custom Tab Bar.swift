@@ -11,6 +11,7 @@ enum Tabs: Int{
     case calendar = 1
     case timers = 2
     case flashCards = 3
+    case examData = 4
     
 }
 
@@ -78,6 +79,18 @@ struct Custom_Tab_Bar: View {
                             Text("Cards")
                         }
                     }
+                }
+            })
+            Button(action: {selectedTab = .examData}, label: {
+                VStack{
+                    if selectedTab == .examData{
+                        Image(systemName: "doc.text.fill")
+                            .frame(width: 24, height: 24)
+                    }else{
+                        Image(systemName: "doc.text")
+                            .frame(width: 24, height: 24)
+                    }
+                    Text("Exams")
                 }
             })
         }

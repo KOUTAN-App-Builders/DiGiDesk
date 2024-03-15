@@ -23,19 +23,34 @@ class Exam_Data: Identifiable{
 struct List_of_Exam_URLs: View {
     
     @Query private var Exams: [Exam_Data]
+    @Environment(\.modelContext) var Context
     
     var body: some View {
         List{
             ForEach(Exams){ exam in
-                VStack{
-                    Text(exam.Exam_Name)
-                        .font(.title)
-                    Text(exam.URL)
-                        .font(.headline)
-                        .padding(.leading, 10)
+                HStack{
+                    VStack{
+                        Text(exam.Exam_Name)
+                            .font(.headline)
+                        Text(exam.URL)
+                            .font(.subheadline)
+                            .padding(.leading, 10)
+                    }
+                    NavigationLink {
+                        About_Exam_Page(Exam: exam)
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .foregroundStyle(Color.blue)
+                    }
+                }
+                .swipeActions{
+                    Button("Delete", systemImage: "trash", role: .destructive) {
+                        Context.delete(exam)
+                    }
                 }
             }
         }
+        .navigationTitle("Online Exam Data List")
         .toolbar{
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
@@ -43,7 +58,6 @@ struct List_of_Exam_URLs: View {
                 } label: {
                     Image(systemName: "plus")
                 }
-                
             }
         }
     }
@@ -71,7 +85,7 @@ struct Add_New_Exam_Data_Page: View {
                 .textInputAutocapitalization(.none)
                 .keyboardType(.URL)
                 .padding()
-            Button(action: {SaveExamData()}, label: {
+            Button(action: {SaveExamData(); Dismiss()}, label: {
                 Text("Save")
                     .frame(width: 200, height: 55)
                     .background(Color.blue)
@@ -104,16 +118,18 @@ struct About_Exam_Page: View {
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Open URL")
                     .frame(width: 200, height: 55)
-                    .background(Color.gray)
+                    .background(Color.black.opacity(0.05))
                     .foregroundStyle(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
+            })
                 Button(action: {DeleteExamData(Exam)}, label: {
                     Text("Delete URL")
                         .frame(width: 200, height: 55)
-                        .background(Color.gray)
+                        .background(Color.black.opacity(0.05))
                         .foregroundStyle(Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
-                })
             })
         }
         .navigationTitle(Exam.Exam_Name)
