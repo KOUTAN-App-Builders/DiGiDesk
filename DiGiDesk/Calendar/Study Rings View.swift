@@ -21,6 +21,16 @@ class Study_Rings_Data: Identifiable{
     }
 }
 
+extension Study_Rings_Data{
+    static func predicate(searchDate: Date) -> Predicate<Study_Rings_Data>{
+        let calendar = Calendar.autoupdatingCurrent
+        let startDate = calendar.startOfDay(for: searchDate)
+        let endDate = calendar.date(byAdding: .init(day: 1), to: startDate) ?? startDate
+        return #Predicate<Study_Rings_Data>{ ring in
+            ring.date > startDate && ring.date < endDate
+        }
+    }
+}
 
 struct Study_Rings_View: View {
     

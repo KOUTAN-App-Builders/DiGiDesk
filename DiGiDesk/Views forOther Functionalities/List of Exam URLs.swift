@@ -115,7 +115,7 @@ struct About_Exam_Page: View {
                 Text(Exam.URL)
             }
             .padding()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Link(destination: URL(string: Exam.URL)!, label: {
                 Text("Open URL")
                     .frame(width: 200, height: 55)
                     .background(Color.black.opacity(0.05))
@@ -123,13 +123,14 @@ struct About_Exam_Page: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
             })
-                Button(action: {DeleteExamData(Exam)}, label: {
-                    Text("Delete URL")
-                        .frame(width: 200, height: 55)
-                        .background(Color.black.opacity(0.05))
-                        .foregroundStyle(Color.blue)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding()
+            
+            Button(action: {DeleteExamData(Exam)}, label: {
+                Text("Delete URL")
+                    .frame(width: 200, height: 55)
+                    .background(Color.black.opacity(0.05))
+                    .foregroundStyle(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
             })
         }
         .navigationTitle(Exam.Exam_Name)

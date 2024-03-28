@@ -17,23 +17,25 @@ struct Create_Calendar_Task_View: View {
     @Environment(\.dismiss) var Dismiss
     
     var body: some View {
-        VStack{
-            TextField("Task Name", text: $New_Task_Name)
-                .frame(height: 55)
-                .background(Color.black.opacity(0.05))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-            DatePicker(selection: $New_Task_DueDate, displayedComponents: .date) {
-                Text("Task Due Date")
-            }
-            Button(action: {Add_New_Task(); Dismiss()}, label: {
-                Text("Add Task")
-                    .frame(width: 200, height: 55)
-                    .background(Color.blue)
-                    .foregroundStyle(Color.white)
+        NavigationStack{
+            VStack{
+                TextField("Task Name", text: $New_Task_Name)
+                    .frame(height: 55)
+                    .background(Color.black.opacity(0.05))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
-            })
+                DatePicker(selection: $New_Task_DueDate, displayedComponents: .date) {
+                    Text("Task Due Date")
+                }
+                Button(action: {Add_New_Task(); Dismiss()}, label: {
+                    Text("Add Task")
+                        .frame(width: 200, height: 55)
+                        .background(Color.blue)
+                        .foregroundStyle(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                })
+            }
         }
         .navigationTitle("Add New Task")
         .padding()
@@ -45,7 +47,7 @@ struct Create_Calendar_Task_View: View {
 }
 
 #Preview {
-    NavigationView{
+    NavigationStack{
         Create_Calendar_Task_View()
     }
 }

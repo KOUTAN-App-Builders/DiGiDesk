@@ -21,6 +21,7 @@ struct Custom_Tab_Bar: View {
     
     var body: some View {
         HStack(alignment: .center){
+            Spacer()
             Button(action: {selectedTab = .bookshelf}, label: {
                 VStack{
                     if selectedTab == .bookshelf{
@@ -31,9 +32,11 @@ struct Custom_Tab_Bar: View {
                             .frame(width: 24 , height: 24)
                     }
                     Text("Books")
+                        .lineLimit(1)
                 }
                 .padding()
             })
+            Spacer()
             Button(action: {selectedTab = .calendar}, label: {
                 VStack{
                     if selectedTab == .calendar{
@@ -47,23 +50,25 @@ struct Custom_Tab_Bar: View {
                 }
                 .padding()
             })
+            Spacer()
             Button(action: {selectedTab = .timers}, label: {
                 VStack{
                     if selectedTab == .timers{
                         VStack{
                             Image(systemName: "timer.circle.fill")
                                 .frame(width: 24 , height: 24)
-                            Text("Timers")
+                            Text("Timer")
                         }
                     }else{
                         VStack{
                             Image(systemName: "timer.circle")
                                 .frame(width: 24 , height: 24)
-                            Text("Timers")
+                            Text("Timer")
                         }
                     }
                 }
             })
+            Spacer()
             Button(action: {selectedTab = .flashCards}, label: {
                 VStack{
                     if selectedTab == .flashCards{
@@ -81,6 +86,7 @@ struct Custom_Tab_Bar: View {
                     }
                 }
             })
+            Spacer()
             Button(action: {selectedTab = .examData}, label: {
                 VStack{
                     if selectedTab == .examData{
@@ -93,6 +99,7 @@ struct Custom_Tab_Bar: View {
                     Text("Exams")
                 }
             })
+            Spacer()
         }
     }
 }

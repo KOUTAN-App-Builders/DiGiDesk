@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,7 +30,10 @@
 		3C5B1D3D2BA0A5D500B18EB6 /* Update Calendar Task View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */; };
 		3C5B1D3F2BA0A6A200B18EB6 /* Create Calendar Task View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */; };
 		3C825B142B84A08300EA55CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C825B132B84A08300EA55CD /* Launch Screen.storyboard */; };
+		3C8C202A2BADD3E200DEDC0D /* Calendar Task ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C20292BADD3E200DEDC0D /* Calendar Task ViewModel.swift */; };
+		3C989AF72BAE3870008BD7A5 /* Daily Task Sheet View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C989AF62BAE3870008BD7A5 /* Daily Task Sheet View.swift */; };
 		3C991E4D2B93F7AA006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */; };
+		3CA8E6E72BA9E23F003CAD1B /* CalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA8E6E62BA9E23F003CAD1B /* CalendarView */; };
 		3CAC0BD92B5A9F2D000F474D /* Add New Book Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */; };
 		3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC0BDC2B5AA03B000F474D /* Book Data Manager.swift */; };
 		3CB4A1342B96C82600D74657 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB4A1332B96C82600D74657 /* WidgetKit.framework */; };
@@ -115,6 +118,8 @@
 		3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Update Calendar Task View.swift"; sourceTree = "<group>"; };
 		3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Calendar Task View.swift"; sourceTree = "<group>"; };
 		3C825B132B84A08300EA55CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3C8C20292BADD3E200DEDC0D /* Calendar Task ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task ViewModel.swift"; sourceTree = "<group>"; };
+		3C989AF62BAE3870008BD7A5 /* Daily Task Sheet View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Daily Task Sheet View.swift"; sourceTree = "<group>"; };
 		3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Japanese_School_Bell02-01(Slow-Long)audio.mp3"; sourceTree = "<group>"; };
 		3CA06F772B9768D0003603B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3CAC0BD82B5A9F2D000F474D /* Add New Book Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add New Book Page.swift"; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 		3CC230ED2BA1AE4900D12FB0 /* Study Rings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Study Rings View.swift"; sourceTree = "<group>"; };
 		3CDAA7522B8A3824005A0776 /* Timers Home Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timers Home Page.swift"; sourceTree = "<group>"; };
 		3CDCF4112B596D0200EF4846 /* Book Shelf Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book Shelf Page.swift"; sourceTree = "<group>"; };
+		3CE8C1412BB317F9003DE56F /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/PDFKit.framework; sourceTree = DEVELOPER_DIR; };
 		3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Tab Bar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA8E6E72BA9E23F003CAD1B /* CalendarView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +258,7 @@
 		3CB4A1322B96C82600D74657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CE8C1412BB317F9003DE56F /* PDFKit.framework */,
 				3C0422A62B9CAE9A0076C193 /* WatchConnectivity.framework */,
 				3CB4A1332B96C82600D74657 /* WidgetKit.framework */,
 				3CB4A1352B96C82600D74657 /* SwiftUI.framework */,
@@ -300,8 +308,10 @@
 				3CC230EB2BA1AB8800D12FB0 /* Task Calendar-List Combined Page.swift */,
 				3C40189C2BA0672F002423F6 /* Calendar Page.swift */,
 				3C5B1D3A2BA0A35200B18EB6 /* Calendar Task List View.swift */,
+				3C989AF62BAE3870008BD7A5 /* Daily Task Sheet View.swift */,
 				3CC230ED2BA1AE4900D12FB0 /* Study Rings View.swift */,
 				3C5B1D362BA09F6700B18EB6 /* Calendar Task Model.swift */,
+				3C8C20292BADD3E200DEDC0D /* Calendar Task ViewModel.swift */,
 				3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */,
 				3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */,
 			);
@@ -343,6 +353,9 @@
 				3CB4A1442B96C82700D74657 /* PBXTargetDependency */,
 			);
 			name = DiGiDesk;
+			packageProductDependencies = (
+				3CA8E6E62BA9E23F003CAD1B /* CalendarView */,
+			);
 			productName = DiGiDesk;
 			productReference = 3C0D25922B581E1700FFC280 /* DiGiDesk.app */;
 			productType = "com.apple.product-type.application";
@@ -411,6 +424,9 @@
 				Base,
 			);
 			mainGroup = 3C0D25892B581E1700FFC280;
+			packageReferences = (
+				3CA8E6E52BA9E23F003CAD1B /* XCLocalSwiftPackageReference "CalendarView-main" */,
+			);
 			productRefGroup = 3C0D25932B581E1700FFC280 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +480,7 @@
 				3C5B1D372BA09F6700B18EB6 /* Calendar Task Model.swift in Sources */,
 				3CC230EE2BA1AE4900D12FB0 /* Study Rings View.swift in Sources */,
 				3C0CE7552B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift in Sources */,
+				3C989AF72BAE3870008BD7A5 /* Daily Task Sheet View.swift in Sources */,
 				3C0CE75B2B8F7B34001B42CD /* Test Sim Timer SetUp Page.swift in Sources */,
 				3CC230EC2BA1AB8800D12FB0 /* Task Calendar-List Combined Page.swift in Sources */,
 				3C0CE7572B8F7A75001B42CD /* Normal Timer SetUp Page.swift in Sources */,
@@ -477,6 +494,7 @@
 				3C5B1D3F2BA0A6A200B18EB6 /* Create Calendar Task View.swift in Sources */,
 				3CAC0BDD2B5AA03B000F474D /* Book Data Manager.swift in Sources */,
 				3C40189D2BA0672F002423F6 /* Calendar Page.swift in Sources */,
+				3C8C202A2BADD3E200DEDC0D /* Calendar Task ViewModel.swift in Sources */,
 				3CDAA7532B8A3824005A0776 /* Timers Home Page.swift in Sources */,
 				3C0D25962B581E1700FFC280 /* DiGiDeskApp.swift in Sources */,
 			);
@@ -871,6 +889,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3CA8E6E52BA9E23F003CAD1B /* XCLocalSwiftPackageReference "CalendarView-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "CalendarView-main";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3CA8E6E62BA9E23F003CAD1B /* CalendarView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalendarView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3C0D258A2B581E1700FFC280 /* Project object */;
 }

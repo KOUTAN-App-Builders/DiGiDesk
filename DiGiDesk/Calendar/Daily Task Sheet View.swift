@@ -1,20 +1,22 @@
 //
-//  Calendar Task List View.swift
+//  Daily Task Sheet View.swift
 //  DiGiDesk
 //
-//  Created by 加納塙大 Editor on 2024/03/12.
+//  Created by 加納塙大 Editor on 2024/03/23.
 //
 
 import SwiftUI
 import SwiftData
 
-struct Calendar_Task_List_View: View {
+struct Daily_Task_Sheet_View: View {
     
+    //@Binding var isBottomSheetPresented: Bool
     @Query private var TaskData: [Task_Data]
-    @Environment(\.modelContext) var Context
-    
+    @Query private var StudyRings: [Study_Rings_Data]
+    @Environment(\.modelContext) private var Context
     @State private var selectedTaskCompletionState: Bool = false
-    @State private var isUpdateViewSelected: Bool = false
+    @State private var isNavigationActive: Bool = false
+    @State private var viewModel = Calendar_Task_ViewModel()
     
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
@@ -23,25 +25,37 @@ struct Calendar_Task_List_View: View {
         return formatter
     }
     
+    init(searchDate: Date){
+        _TaskData = Query(
+            filter: Task_Data.predicate(searchDate: searchDate),
+            sort: \Task_Data.task_Due_Date,
+            order: .forward
+        )
+        _StudyRings = Query(
+            filter: Study_Rings_Data.predicate(searchDate: searchDate)
+        )
+    }
+    
     var body: some View {
         ScrollView{
+            /*ForEach(StudyRings){ ring in
+             Study_Rings_View()
+             }*/
             if TaskData.isEmpty{
-                VStack{
-                    Text("There are no tasks")
-                        .font(.largeTitle)
-                    Text("You can add new tasks by clicking the button below.")
-                        .font(.headline)
-                    NavigationLink {
-                        Create_Calendar_Task_View()
-                    } label: {
-                        Text("Add new Task")
-                            .frame(width: 200, height: 50)
-                            .background(Color.blue)
-                            .foregroundStyle(Color.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding()
-                    }
+                Spacer()
+                Text("No tasks for \(viewModel.searchDate)")
+                    .font(.title)
+                NavigationLink {
+                    Create_Calendar_Task_View()
+                } label: {
+                    Text("Add new Task")
+                        .frame(width: 200, height: 55)
+                        .background(Color.blue)
+                        .foregroundStyle(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
                 }
+                Spacer()
             }else{
                 ForEach(TaskData){ task in
                     Divider()
@@ -76,23 +90,20 @@ struct Calendar_Task_List_View: View {
                             deleteTask(task)
                         }
                     }
-                    .padding(.horizontal, 20)
                 }
+                .padding(.horizontal, 20)
             }
         }
-        .navigationTitle("Task List")
-        .toolbar{
-            ToolbarItem(placement: .topBarLeading) {
-                EditButton()
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    Create_Calendar_Task_View()
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-        }
+        .navigationTitle("Tasks for: \(viewModel.searchDate)")
+        
+        /*
+         .toolbar{
+         ToolbarItem(placement: .topBarLeading) {
+         Button(action: {isBottomSheetPresented.toggle()}, label: {
+         Text("Cancel")
+         })
+         }
+         }*/
     }
     func updateTaskCompletion(_ task: Task_Data){
         task.isTaskCompleted = selectedTaskCompletionState
@@ -106,6 +117,6 @@ struct Calendar_Task_List_View: View {
 
 #Preview {
     NavigationStack{
-        Task_Calendar_List_Combined_Page()
+        Daily_Task_Sheet_View(searchDate: Calendar_Task_ViewModel().searchDate)
     }
 }
