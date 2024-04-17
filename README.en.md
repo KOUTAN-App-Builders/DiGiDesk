@@ -23,6 +23,8 @@ This project required approximately 33 hours to create.(2024/4/10 JST) →Althou
 - Completing Study Rings.
 
 [Big Thanks to: ]
+- Icons8 (App Icon)
+	https://icons8.jp/
 - How to Build a Custom Tab Bar in SwiftUI / CodeWithChris 
 	https://youtu.be/R_KZwX-yP4o?si=yvdorCvNju01wITO
 - How to Create an App Icon (2019) / CodeWithChris
