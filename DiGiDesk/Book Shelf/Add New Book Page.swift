@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import PDFKit
 import PhotosUI
 import UniformTypeIdentifiers
 
@@ -16,6 +17,7 @@ struct Add_New_Book_Page: View {
     @Environment(\.dismiss) var Dismiss
     @State var selectedPhoto: PhotosPickerItem?
     @State var selectedPhotoData: Data?
+    @State private var selectedPDFDocument: PDFDocument?
     @State var fileName: String = ""
     @State var selectedFileURL: URL?
     @State var openFile: Bool = false
@@ -87,21 +89,32 @@ struct Add_New_Book_Page: View {
                 selectedPhotoData = data
             }
         }
-        .fileImporter(isPresented: $openFile, allowedContentTypes: [.pdf]) { (result) in
-            do{
-                let fileURL = try result.get()
-                print(fileURL)
-                self.fileName = fileURL.lastPathComponent
-                self.selectedFileURL = fileURL
-            }
-            catch{
-                print("error reading documents")
-                print(error.localizedDescription)
+        .fileImporter(isPresented: $openFile, allowedContentTypes: [UTType.pdf]) { result in
+            switch result {
+            case .success(let url):
+                guard url.startAccessingSecurityScopedResource() else{
+                    print("startAccessingSecurityScopedResouce Error")
+                    return
+                }
+                let fileManager = FileManager.default
+                if fileManager.fileExists(atPath: url.path){
+                    print("File exists at: \(url.path)")
+                }else{
+                    print("File doesn't exist at: \(url.path)")
+                }
+                if let document = PDFDocument(url: url){
+                    print("PDF Document Loaded Successfully.")
+                    self.selectedFileURL = url
+                    self.selectedPDFDocument = document
+                }
+                url.stopAccessingSecurityScopedResource()
+            case .failure(let error):
+                print("Error occured while selecting file: \(error.localizedDescription)")
             }
         }
     }
     func AddBook(){
-        let New_Book = Book_Data_Model(id: UUID().uuidString, Book_Name: Book_Name, Book_Image: selectedPhotoData!, Book_Data_File_URL: selectedFileURL)
+        let New_Book = Book_Data_Model(id: UUID().uuidString, Book_Name: Book_Name, Book_Image: selectedPhotoData, Book_Data_File_URL: selectedFileURL!, pdfDocument: selectedPDFDocument!)
         Context.insert(New_Book)
     }
 }

@@ -31,7 +31,7 @@ struct DiGiDeskApp: App {
             NavigationView{
                 ContentView()
             }
-            .navigationViewStyle(StackNavigationViewStyle())
+            //.navigationViewStyle(StackNavigationViewStyle())
         }
         .modelContainer(for: [Book_Data_Model.self, Study_Rings_Data.self, Exam_Data.self, Flash_Card_Data.self, Task_Data.self])
     }

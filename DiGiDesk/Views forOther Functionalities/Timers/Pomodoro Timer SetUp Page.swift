@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import AVFoundation
 import ActivityKit
 
@@ -19,6 +20,8 @@ struct Pomodoro_Timer_SetUp_Page: View {
     @State private var isTimerRunning: Bool = false
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     @State private var audioPlayer: AVAudioPlayer?
+    
+    //@State var StudyRings: Study_Rings_Data
     
     var body: some View {
         ZStack{

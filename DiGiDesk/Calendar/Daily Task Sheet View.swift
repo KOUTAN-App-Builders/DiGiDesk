@@ -38,24 +38,39 @@ struct Daily_Task_Sheet_View: View {
     
     var body: some View {
         ScrollView{
-            /*ForEach(StudyRings){ ring in
-             Study_Rings_View()
-             }*/
-            if TaskData.isEmpty{
-                Spacer()
-                Text("No tasks for \(viewModel.searchDate)")
-                    .font(.title)
-                NavigationLink {
-                    Create_Calendar_Task_View()
-                } label: {
-                    Text("Add new Task")
-                        .frame(width: 200, height: 55)
-                        .background(Color.blue)
-                        .foregroundStyle(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding()
+            if StudyRings.isEmpty{
+                VStack{
+                    Text("Rings aren't created.")
+                        .font(.title)
+                    Text("Create one by studying using the timer!")
+                        .font(.caption)
                 }
-                Spacer()
+                .padding(.vertical)
+            }else{
+                ForEach(StudyRings){ ring in
+                    Study_Rings_View(StudyRings: ring)
+                }
+                .padding(.vertical)
+            }
+            Divider()
+                .padding(.vertical)
+            if TaskData.isEmpty{
+                VStack{
+                    Spacer()
+                    Text("No tasks for \(viewModel.searchDate, formatter: dateFormatter)")
+                        .font(.headline)
+                    NavigationLink {
+                        Create_Calendar_Task_View()
+                    } label: {
+                        Text("Add new Task")
+                            .frame(width: 200, height: 55)
+                            .background(Color.blue)
+                            .foregroundStyle(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding()
+                    }
+                    Spacer()
+                }
             }else{
                 ForEach(TaskData){ task in
                     Divider()

@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import CalendarView
 
 struct Calendar_Page: View {
     

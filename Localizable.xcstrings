@@ -1,0 +1,277 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ / %@ hours" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ / %2$@ hours"
+          }
+        }
+      }
+    },
+    "Add Book" : {
+
+    },
+    "Add Image" : {
+
+    },
+    "Add New Book" : {
+
+    },
+    "Add New Flash Cards" : {
+
+    },
+    "Add new Task" : {
+
+    },
+    "Add New Task" : {
+
+    },
+    "Add New URL" : {
+
+    },
+    "Add Task" : {
+
+    },
+    "Adjust by Hour" : {
+
+    },
+    "Adjust by Minute" : {
+
+    },
+    "Adjust by Minutes" : {
+
+    },
+    "Adjust by Second" : {
+
+    },
+    "An error occured regarding the generation & load for the Study Rings for today." : {
+
+    },
+    "Answers" : {
+
+    },
+    "Book Name" : {
+
+    },
+    "Book Shelf" : {
+
+    },
+    "Books" : {
+
+    },
+    "BookShelf" : {
+
+    },
+    "Calendar" : {
+
+    },
+    "Calendar Page" : {
+
+    },
+    "Cards" : {
+
+    },
+    "Change Goal Hours" : {
+
+    },
+    "Configured Time Length: %@" : {
+
+    },
+    "Create one by studying using the timer!" : {
+
+    },
+    "Creates a Pomodoro Session." : {
+
+    },
+    "Creates a timer to simulate real life exams." : {
+
+    },
+    "Creates a timer with repetition." : {
+
+    },
+    "Creates an unrepeated ordinary timer." : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete Task" : {
+
+    },
+    "Delete URL" : {
+
+    },
+    "DiGiDesk" : {
+
+    },
+    "Due Date: %@" : {
+
+    },
+    "Error Loading Rings" : {
+
+    },
+    "Exam Links" : {
+
+    },
+    "Exam Name" : {
+
+    },
+    "Exam URL" : {
+
+    },
+    "Exams" : {
+
+    },
+    "Flash Cards" : {
+
+    },
+    "Flash Cards List" : {
+
+    },
+    "Focus Time: %@" : {
+
+    },
+    "GitHub Issue Report Page" : {
+
+    },
+    "Hello, world!" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "I'd appreciate it if you can report this error on my GitHub Issue page which is linked below." : {
+
+    },
+    "Import CSV file" : {
+
+    },
+    "Infinite Repetition Timer" : {
+
+    },
+    "Interval Time: %@" : {
+
+    },
+    "Missing PDF File or Image" : {
+
+    },
+    "New Due Date for the Task" : {
+
+    },
+    "New Task Name" : {
+
+    },
+    "No tasks for %@" : {
+
+    },
+    "OK" : {
+
+    },
+    "Online Exam Data List" : {
+
+    },
+    "Open Book PDF File" : {
+
+    },
+    "Open URL" : {
+
+    },
+    "Ordinary Timer" : {
+
+    },
+    "Pause" : {
+
+    },
+    "PDF File wasn't found!" : {
+
+    },
+    "Please choose a PDF File and an image before saving." : {
+
+    },
+    "Please delete this book data set and create a new one." : {
+
+    },
+    "Pomodoro Timer" : {
+
+    },
+    "Questions" : {
+
+    },
+    "Remove Image" : {
+
+    },
+    "Repetition Timer" : {
+
+    },
+    "Rings aren't created." : {
+
+    },
+    "Save" : {
+
+    },
+    "Select PDF" : {
+
+    },
+    "Select PDF here!" : {
+
+    },
+    "Start" : {
+
+    },
+    "Study Goals: %@hour / day" : {
+
+    },
+    "StudyGoals: %@hours / day" : {
+
+    },
+    "Task Due Date" : {
+
+    },
+    "Task List" : {
+
+    },
+    "Task Name" : {
+
+    },
+    "Tasks for: %@" : {
+
+    },
+    "Test Simulation Timer" : {
+
+    },
+    "There are no tasks" : {
+
+    },
+    "Timer" : {
+
+    },
+    "Timer Settings" : {
+
+    },
+    "Timer Type" : {
+
+    },
+    "Update Study Goal Hours" : {
+
+    },
+    "Update Study Goals" : {
+
+    },
+    "Update Task" : {
+
+    },
+    "URL for the exam:" : {
+
+    },
+    "Word Number" : {
+
+    },
+    "You can add new tasks by clicking the button below." : {
+
+    }
+  },
+  "version" : "1.0"
+}

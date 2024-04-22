@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 import UIKit
 import PDFKit
-import Combine
 
 struct Book_Shelf_Page: View {
     
@@ -56,6 +55,12 @@ struct Book_Shelf_Page: View {
                         .cornerRadius(10)
                         .shadow(radius: 5)
                     }
+                    /*
+                    NavigationLink {
+                        PDF_Display_Test_Page()
+                    } label: {
+                        Text("Test Page")
+                    }*/
                 }else{
                     ForEach(Books){ book in
                         NavigationLink {
@@ -76,7 +81,7 @@ struct Book_Shelf_Page: View {
                 }
             }
             .padding()
-            .navigationTitle("BookShelf")
+            .navigationTitle("Book Shelf")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -105,15 +110,35 @@ struct About_Book_Page: View {
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                     .shadow(radius: 10)
             }
-            NavigationLink {
-                PDFViewWrapper(pdfURL: Book.Book_Data_File_URL!)
-            } label: {
-                Text("Open Book PDF File")
-                    .frame(width: 200, height: 55)
-                    .background(Color.black.opacity(0.05))
-                    .foregroundColor(.blue)
-                    .cornerRadius(10)
-                    .padding()
+            if let pdfData = Book.Book_PDF_Document_Data{
+                NavigationLink {
+                    PDFViewer(pdfData: pdfData)
+                } label: {
+                    Text("Open Book PDF File")
+                        .frame(width: 200, height: 55)
+                        .background(Color.black.opacity(0.05))
+                        .foregroundColor(.blue)
+                        .cornerRadius(10)
+                        .padding()
+                }
+            }else{
+                NavigationLink {
+                    VStack{
+                        Text("PDF File wasn't found!")
+                            .font(.title)
+                            .foregroundStyle(Color.red)
+                        Text("Please delete this book data set and create a new one.")
+                            .font(.headline)
+                    }
+                } label: {
+                    Text("Open Book PDF File")
+                        .frame(width: 200, height: 55)
+                        .background(Color.black.opacity(0.05))
+                        .foregroundStyle(Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
+
             }
             Button(action: {DeleteBook(Book)}, label: {
                 Text("Delete")
@@ -132,27 +157,26 @@ struct About_Book_Page: View {
 }
 
 struct PDFViewWrapper: UIViewRepresentable{
-    let pdfURL: URL
+    let pdfData: Data
     
     func makeUIView(context: Context) -> PDFView {
         let PDFView = PDFView()
-        PDFView.document = PDFDocument(url: pdfURL)
+        PDFView.autoScales = true
+        PDFView.document = PDFDocument(data: pdfData)
         return PDFView
     }
     func updateUIView(_ uiView: PDFView, context: Context) {
-        uiView.document = PDFDocument(url: pdfURL)
+        uiView.document = PDFDocument(data: pdfData)
     }
 }
 
 struct PDFViewer: View {
     
-    let Book : Book_Data_Model
+    let pdfData: Data
     
     var body: some View {
-        VStack{
-            PDFViewWrapper(pdfURL: Book.Book_Data_File_URL!)
+        PDFViewWrapper(pdfData: pdfData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
     }
 }
 
