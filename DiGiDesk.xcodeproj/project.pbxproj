@@ -125,6 +125,9 @@
 		3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Calendar Task View.swift"; sourceTree = "<group>"; };
 		3C825B132B84A08300EA55CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3C8C20292BADD3E200DEDC0D /* Calendar Task ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Task ViewModel.swift"; sourceTree = "<group>"; };
+		3C986EA52BD6B13C000D0FDA /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
+		3C986EA62BD6B13C000D0FDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3C986EA72BD6B13C000D0FDA /* README.en.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.en.md; sourceTree = "<group>"; };
 		3C989AF62BAE3870008BD7A5 /* Daily Task Sheet View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Daily Task Sheet View.swift"; sourceTree = "<group>"; };
 		3C991E4C2B93F7A9006C88F9 /* Japanese_School_Bell02-01(Slow-Long)audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Japanese_School_Bell02-01(Slow-Long)audio.mp3"; sourceTree = "<group>"; };
 		3CA06F772B9768D0003603B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +191,9 @@
 		3C0D25892B581E1700FFC280 = {
 			isa = PBXGroup;
 			children = (
+				3C986EA52BD6B13C000D0FDA /* LICENCE.md */,
+				3C986EA72BD6B13C000D0FDA /* README.en.md */,
+				3C986EA62BD6B13C000D0FDA /* README.md */,
 				3C33CCD82BB6B4210082E80F /* Localizable.xcstrings */,
 				3C0D25942B581E1700FFC280 /* DiGiDesk */,
 				3CB4A1372B96C82600D74657 /* DiGiDesk Timer Widgets */,
