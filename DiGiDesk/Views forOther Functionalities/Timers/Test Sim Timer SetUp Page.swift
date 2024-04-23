@@ -9,7 +9,14 @@ import SwiftUI
 
 struct Test_Sim_Timer_SetUp_Page: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Currently in Build!")
+                .font(.title)
+            Text("This Feature will be added in a future update!")
+                .font(.headline)
+            Text("Please stay tuned!")
+                .font(.subheadline)
+        }
     }
 }
 

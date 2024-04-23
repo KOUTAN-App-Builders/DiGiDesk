@@ -47,10 +47,10 @@
     "Adjust by Second" : {
 
     },
-    "An error occured regarding the generation & load for the Study Rings for today." : {
+    "Answers" : {
 
     },
-    "Answers" : {
+    "Auto creation of study rings is not possible now." : {
 
     },
     "Book Name" : {
@@ -60,9 +60,6 @@
 
     },
     "Books" : {
-
-    },
-    "BookShelf" : {
 
     },
     "Calendar" : {
@@ -83,6 +80,9 @@
     "Create one by studying using the timer!" : {
 
     },
+    "Create Study Ring" : {
+
+    },
     "Creates a Pomodoro Session." : {
 
     },
@@ -93,6 +93,9 @@
 
     },
     "Creates an unrepeated ordinary timer." : {
+
+    },
+    "Currently in Build!" : {
 
     },
     "Delete" : {
@@ -110,7 +113,7 @@
     "Due Date: %@" : {
 
     },
-    "Error Loading Rings" : {
+    "Error Generating Rings" : {
 
     },
     "Exam Links" : {
@@ -134,16 +137,7 @@
     "Focus Time: %@" : {
 
     },
-    "GitHub Issue Report Page" : {
-
-    },
     "Hello, world!" : {
-
-    },
-    "Hello, World!" : {
-
-    },
-    "I'd appreciate it if you can report this error on my GitHub Issue page which is linked below." : {
 
     },
     "Import CSV file" : {
@@ -192,6 +186,9 @@
 
     },
     "Please delete this book data set and create a new one." : {
+
+    },
+    "Please stay tuned!" : {
 
     },
     "Pomodoro Timer" : {
@@ -245,6 +242,9 @@
     "There are no tasks" : {
 
     },
+    "This Feature will be added in a future update!" : {
+
+    },
     "Timer" : {
 
     },
@@ -270,6 +270,9 @@
 
     },
     "You can add new tasks by clicking the button below." : {
+
+    },
+    "You can manually create a ring below, but study hours will not be added even when you study with the timer. -> Coming in Future Updates" : {
 
     }
   },

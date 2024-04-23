@@ -15,8 +15,6 @@ This project required approximately 33 hours to create.(2024/4/10 JST) →Althou
 
 [Issues & Uncompleted Functionalities]
 (Issues)
-- PDF Files can’t be displayed properly in the PDF View wrapper.
-- In the detail page for links to exams (or sites related to studying & learning), the button to open the link in “Safari” doesn’t work properly.
 - Background creation for Study Rings doesn’t work properly.
 
 (Uncompleted Functionalities & What to Expect in the Next Version)

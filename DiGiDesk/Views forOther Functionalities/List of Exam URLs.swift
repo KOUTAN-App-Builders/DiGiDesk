@@ -29,7 +29,7 @@ struct List_of_Exam_URLs: View {
         List{
             ForEach(Exams){ exam in
                 HStack{
-                    VStack{
+                    VStack(alignment: .leading){
                         Text(exam.Exam_Name)
                             .font(.headline)
                         Text(exam.URL)
