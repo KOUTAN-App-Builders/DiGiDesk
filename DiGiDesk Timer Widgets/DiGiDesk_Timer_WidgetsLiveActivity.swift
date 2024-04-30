@@ -9,16 +9,63 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
+enum TimerType: Codable{
+    case Normal
+    case Pomodoro
+    case Repetition
+    case Test_Sim
+}
+
 struct DiGiDesk_Timer_WidgetsAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var initialTime: Int
         var remainingTime: Int
-        var currentState: String
+        var currentState: String?
     }
-
     // Fixed non-changing properties about your activity go here!
-    var TimerType: String
+    var timerType: TimerType
+}
+
+struct Timer_LiveActivity_View: View {
+    
+    let context: ActivityViewContext<DiGiDesk_Timer_WidgetsAttributes>
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20){
+            HStack{
+                Text(timerTypeText(context.attributes.timerType))
+                    .font(.headline)
+                Spacer()
+                //Text(context.state.currentState!)
+            }
+            ProgressView(value: Double(context.state.remainingTime) / Double(context.state.initialTime))
+                .padding(.horizontal, 20)
+            Text(secondsToMinutesAndSeconds(context.state.remainingTime))
+                .font(.subheadline)
+                .padding(.horizontal)
+        }
+        .foregroundStyle(Color.orange)
+        .padding(.vertical)
+    }
+    func secondsToMinutesAndSeconds(_ seconds: Int) -> String{
+        let hours = seconds / 3600
+        let remainingMinutes = seconds % 3600 / 60
+        let remainingSeconds = seconds % 60
+        return String(format: "%02d:%02d:%02d", hours, remainingMinutes, remainingSeconds)
+    }
+    func timerTypeText(_ timerType: TimerType) -> String{
+        switch timerType {
+        case .Normal:
+            return "Normal Timer"
+        case .Pomodoro:
+            return "Pomodoro Timer"
+        case .Repetition:
+            return "Repetition Timer"
+        case .Test_Sim:
+            return "Test Simulation Timer"
+        }
+    }
 }
 
 struct DiGiDesk_Timer_WidgetsLiveActivity: Widget {
@@ -26,59 +73,83 @@ struct DiGiDesk_Timer_WidgetsLiveActivity: Widget {
         ActivityConfiguration(for: DiGiDesk_Timer_WidgetsAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text(context.attributes.TimerType)
+                Timer_LiveActivity_View(context: context)
             }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
+            .activityBackgroundTint(Color.black)
+            .activitySystemActionForegroundColor(Color.orange)
+            
         } dynamicIsland: { context in
             DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text(timerTypeText(context.attributes.timerType))
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text(context.state.currentState!)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom")
-                    // more content
+                    VStack(alignment: .center, spacing: 10){
+                        ProgressView(value: Double(context.state.remainingTime) / Double(context.state.initialTime))
+                            .progressViewStyle(.circular)
+                        // more content
+                        Text("remaining time: \(secondsToMinutesAndSeconds(context.state.remainingTime))")
+                    }
                 }
             } compactLeading: {
-                Text("L")
+                ProgressView(value: Double(context.state.remainingTime) / Double(context.state.initialTime))
+                    .progressViewStyle(.circular)
             } compactTrailing: {
-                Text("Trailing")
+                Text(secondsToMinutesAndSeconds(context.state.remainingTime))
             } minimal: {
-                Text("minimal")
+                ProgressView(value: Double(context.state.remainingTime) / Double(context.state.initialTime))
+                    .progressViewStyle(.circular)
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
         }
     }
-}
-/*
-extension DiGiDesk_Timer_WidgetsAttributes {
-    fileprivate static var preview: DiGiDesk_Timer_WidgetsAttributes {
-        DiGiDesk_Timer_WidgetsAttributes(TimerType: "World")
+    func secondsToMinutesAndSeconds(_ seconds: Int) -> String{
+        let hours = seconds / 3600
+        let remainingMinutes = seconds % 3600 / 60
+        let remainingSeconds = seconds % 60
+        return String(format: "%02d:%02d:%02d", hours, remainingMinutes, remainingSeconds)
+    }
+    func timerTypeText(_ timerType: TimerType) -> String{
+        switch timerType {
+        case .Normal:
+            return "Normal Timer"
+        case .Pomodoro:
+            return "Pomodoro Timer"
+        case .Repetition:
+            return "Repetition Timer"
+        case .Test_Sim:
+            return "Test Simulation Timer"
+        }
     }
 }
-
-extension DiGiDesk_Timer_WidgetsAttributes.ContentState {
-    fileprivate static var smiley: DiGiDesk_Timer_WidgetsAttributes.ContentState {
-        DiGiDesk_Timer_WidgetsAttributes.ContentState(from: "😀" as! Decoder)
-     }
-     
-     fileprivate static var starEyes: DiGiDesk_Timer_WidgetsAttributes.ContentState {
-         DiGiDesk_Timer_WidgetsAttributes.ContentState(emoji: "🤩")
-     }
-}
-
-#Preview("Notification", as: .content, using: DiGiDesk_Timer_WidgetsAttributes.preview) {
-   DiGiDesk_Timer_WidgetsLiveActivity()
-} contentStates: {
-    DiGiDesk_Timer_WidgetsAttributes.ContentState.smiley
-    DiGiDesk_Timer_WidgetsAttributes.ContentState.starEyes
+/*
+ extension DiGiDesk_Timer_WidgetsAttributes {
+ fileprivate static var preview: DiGiDesk_Timer_WidgetsAttributes {
+ DiGiDesk_Timer_WidgetsAttributes(TimerType: "World")
+ }
+ }
+ 
+ extension DiGiDesk_Timer_WidgetsAttributes.ContentState {
+ fileprivate static var smiley: DiGiDesk_Timer_WidgetsAttributes.ContentState {
+ DiGiDesk_Timer_WidgetsAttributes.ContentState(from: "😀" as! Decoder)
+ }
+ 
+ fileprivate static var starEyes: DiGiDesk_Timer_WidgetsAttributes.ContentState {
+ DiGiDesk_Timer_WidgetsAttributes.ContentState(emoji: "🤩")
+ }
+ }
+ 
+ #Preview("Notification", as: .content, using: DiGiDesk_Timer_WidgetsAttributes.preview) {
+ DiGiDesk_Timer_WidgetsLiveActivity()
+ } contentStates: {
+ DiGiDesk_Timer_WidgetsAttributes.ContentState.smiley
+ DiGiDesk_Timer_WidgetsAttributes.ContentState.starEyes
  }
  
  */

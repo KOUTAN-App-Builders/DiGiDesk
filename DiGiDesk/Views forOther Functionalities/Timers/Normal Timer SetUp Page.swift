@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import ActivityKit
+import WidgetKit
 
 struct Normal_Timer_SetUp_Page: View {
     
@@ -13,6 +15,7 @@ struct Normal_Timer_SetUp_Page: View {
     @State private var timeRemaining: Int = 1500
     @State private var StudiedTime: Int = 1500
     @State private var timerRunning: Bool = false
+    @State private var LiveActivityID: String = ""
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     // Current Date
     /*
@@ -39,13 +42,20 @@ struct Normal_Timer_SetUp_Page: View {
                         .font(.largeTitle)
                         .padding()
                     HStack{
-                        Button(action: {timerRunning.toggle()}, label: {
+                        Button {
+                            timerRunning.toggle()
+                            if timerRunning == true{
+                                addLiveActivity()
+                            }else{
+                                removeLiveActivity()
+                            }
+                        } label: {
                             Text(timerRunning ? "Pause" : "Start")
                                 .padding()
                                 .foregroundStyle(Color.white)
                                 .background(timerRunning ? Color.red : Color.green)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
-                        })
+                        }
                         Button(action: {timeRemaining = initialTime}, label: {
                             Image(systemName: "arrow.counterclockwise")
                                 .frame(width: 30, height: 30)
@@ -85,6 +95,7 @@ struct Normal_Timer_SetUp_Page: View {
         .padding(.horizontal)
         .onReceive(timer) { _ in
             if timerRunning{
+                updateLiveActivity()
                 if timeRemaining > 0{
                     timeRemaining -= 1
                 }
@@ -123,6 +134,42 @@ struct Normal_Timer_SetUp_Page: View {
         initialTime -= 60
         if initialTime <= 0{
             initialTime = 0
+        }
+    }
+    func addLiveActivity(){
+        let timerAttributes = DiGiDesk_Timer_WidgetsAttributes(timerType: .Normal)
+        let initialContentState = DiGiDesk_Timer_WidgetsAttributes.ContentState(initialTime: initialTime, remainingTime: timeRemaining, currentState: nil)
+        let content = ActivityContent(state: initialContentState, staleDate: nil, relevanceScore: 0.0)
+        do{
+            let activity = try Activity.request(attributes: timerAttributes, content: content, pushType: nil)
+            LiveActivityID = activity.id
+            print("Activity Added Successfully. id: \(activity.id)")
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    func updateLiveActivity(){
+        let contentState = DiGiDesk_Timer_WidgetsAttributes.ContentState(initialTime: initialTime, remainingTime: timeRemaining)
+        if let activity = Activity.activities.first(where: { (activity: Activity<DiGiDesk_Timer_WidgetsAttributes>) in
+            activity.id == LiveActivityID
+        }){
+            print("Activity Found")
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+                Task{
+                    await activity.update(
+                    ActivityContent(state: contentState, staleDate: nil)
+                    )
+                }
+            }
+        }
+    }
+    func removeLiveActivity(){
+        if let activity = Activity.activities.first(where: { (activity: Activity<DiGiDesk_Timer_WidgetsAttributes>) in
+            activity.id == LiveActivityID
+        }){
+            Task{
+                await activity.end(activity.content, dismissalPolicy: .immediate)
+            }
         }
     }
 }

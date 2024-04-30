@@ -53,13 +53,20 @@ struct Pomodoro_Timer_SetUp_Page: View {
                                 .padding()
                         }
                         HStack{
-                            Button(action: {isTimerRunning.toggle()}, label: {
+                            Button {
+                                isTimerRunning.toggle()
+                                if isTimerRunning == true{
+                                    addLiveActivity()
+                                }else{
+                                    removeLiveActivity()
+                                }
+                            } label: {
                                 Text(isTimerRunning ? "Pause" : "Start")
                                     .padding()
                                     .foregroundStyle(Color.white)
                                     .background(isTimerRunning ? Color.red : Color.green)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                            })
+                            }
                             Button(action: {RemainingFocusTime = InitialFocusTime}, label: {
                                 Image(systemName: "arrow.counterclockwise")
                                     .frame(width: 30, height: 30)
@@ -212,6 +219,16 @@ struct Pomodoro_Timer_SetUp_Page: View {
         isTimerRunning = false
         RemainingFocusTime = InitialFocusTime
         RemainingIntervalTime = InitialIntervalTime
+    }
+    func addLiveActivity(){
+        //let timerAttributes = DiGiDesk_Timer_WidgetsAttributes(timerType: .Pomodoro)
+        
+    }
+    func updateLiveActivity(){
+        
+    }
+    func removeLiveActivity(){
+        
     }
 }
 

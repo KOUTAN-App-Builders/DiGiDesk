@@ -32,6 +32,7 @@
 		3C5B1D3B2BA0A35200B18EB6 /* Calendar Task List View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3A2BA0A35200B18EB6 /* Calendar Task List View.swift */; };
 		3C5B1D3D2BA0A5D500B18EB6 /* Update Calendar Task View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3C2BA0A5D500B18EB6 /* Update Calendar Task View.swift */; };
 		3C5B1D3F2BA0A6A200B18EB6 /* Create Calendar Task View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1D3E2BA0A6A200B18EB6 /* Create Calendar Task View.swift */; };
+		3C5B80412BDBB7DD00888FE7 /* DiGiDesk_Timer_WidgetsLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4A13A2B96C82600D74657 /* DiGiDesk_Timer_WidgetsLiveActivity.swift */; };
 		3C825B142B84A08300EA55CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C825B132B84A08300EA55CD /* Launch Screen.storyboard */; };
 		3C8C202A2BADD3E200DEDC0D /* Calendar Task ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C20292BADD3E200DEDC0D /* Calendar Task ViewModel.swift */; };
 		3C989AF72BAE3870008BD7A5 /* Daily Task Sheet View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C989AF62BAE3870008BD7A5 /* Daily Task Sheet View.swift */; };
@@ -493,6 +494,7 @@
 				3C5B1D3D2BA0A5D500B18EB6 /* Update Calendar Task View.swift in Sources */,
 				3C161A862BD334A400181795 /* PDF Display Test Page.swift in Sources */,
 				3CEE560B2B5945BE0030C170 /* Custom Tab Bar.swift in Sources */,
+				3C5B80412BDBB7DD00888FE7 /* DiGiDesk_Timer_WidgetsLiveActivity.swift in Sources */,
 				3C5B1D372BA09F6700B18EB6 /* Calendar Task Model.swift in Sources */,
 				3CC230EE2BA1AE4900D12FB0 /* Study Rings View.swift in Sources */,
 				3C0CE7552B8F7A58001B42CD /* Pomodoro Timer SetUp Page.swift in Sources */,
