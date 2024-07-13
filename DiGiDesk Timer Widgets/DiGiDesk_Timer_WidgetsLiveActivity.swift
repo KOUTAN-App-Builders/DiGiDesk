@@ -37,7 +37,11 @@ struct Timer_LiveActivity_View: View {
                 Text(timerTypeText(context.attributes.timerType))
                     .font(.headline)
                 Spacer()
-                //Text(context.state.currentState!)
+                if context.state.currentState == nil{
+                    //UI for timer types which "Concentration" or "Break" time is not defined or required.
+                }else{
+                    Text(context.state.currentState!)
+                }
             }
             ProgressView(value: Double(context.state.remainingTime) / Double(context.state.initialTime))
                 .padding(.horizontal, 20)
@@ -86,12 +90,15 @@ struct DiGiDesk_Timer_WidgetsLiveActivity: Widget {
                     Text(timerTypeText(context.attributes.timerType))
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(context.state.currentState!)
+                    if context.state.currentState == nil{
+                        //UI for timers without "Focus" and "Break" modes.
+                    }else{
+                        Text(context.state.currentState!)
+                    }
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     VStack(alignment: .center, spacing: 10){
                         ProgressView(value: Double(context.state.remainingTime) / Double(context.state.initialTime))
-                            .progressViewStyle(.circular)
                         // more content
                         Text("remaining time: \(secondsToMinutesAndSeconds(context.state.remainingTime))")
                     }

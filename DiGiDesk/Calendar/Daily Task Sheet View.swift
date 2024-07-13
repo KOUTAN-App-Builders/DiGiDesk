@@ -62,7 +62,7 @@ struct Daily_Task_Sheet_View: View {
                     NavigationLink {
                         Create_Calendar_Task_View()
                     } label: {
-                        Text("Add new Task")
+                        Text("Add New Task")
                             .frame(width: 200, height: 55)
                             .background(Color.blue)
                             .foregroundStyle(Color.white)

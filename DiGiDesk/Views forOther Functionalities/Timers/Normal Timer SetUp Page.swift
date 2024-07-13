@@ -156,9 +156,14 @@ struct Normal_Timer_SetUp_Page: View {
             print("Activity Found")
             DispatchQueue.main.asyncAfter(deadline: .now()){
                 Task{
-                    await activity.update(
-                    ActivityContent(state: contentState, staleDate: nil)
-                    )
+                    do{
+                        await activity.update(
+                            ActivityContent(state: contentState, staleDate: nil)
+                        )
+                        print("Live Activity updated successfully.")
+                    }catch{
+                        print("Error updating Live Activity: \(error.localizedDescription)")
+                    }
                 }
             }
         }

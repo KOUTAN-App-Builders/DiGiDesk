@@ -57,7 +57,7 @@ struct Repetition_Timer_SetUp_Page: View {
                 decrementHours()
             }
             Stepper{
-                Text("Adjust by Minutes")
+                Text("Adjust by Minute")
             }onIncrement: {
                 incrementMinutes()
             }onDecrement: {

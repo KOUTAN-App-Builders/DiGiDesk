@@ -20,6 +20,7 @@ struct Pomodoro_Timer_SetUp_Page: View {
     @State private var isTimerRunning: Bool = false
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     @State private var audioPlayer: AVAudioPlayer?
+    @State private var LiveActivityID: String = ""
     
     //@State var StudyRings: Study_Rings_Data
     
@@ -130,6 +131,7 @@ struct Pomodoro_Timer_SetUp_Page: View {
             if isTimerRunning{
                 if RemainingFocusTime > 0{
                     RemainingFocusTime -= 1
+                    updateFocusModeLA()
                     RemainingIntervalTime = InitialIntervalTime
                     if RemainingFocusTime == 0{
                         playSound()
@@ -137,6 +139,7 @@ struct Pomodoro_Timer_SetUp_Page: View {
                 }else{
                     if RemainingIntervalTime > 0{
                         RemainingIntervalTime -= 1
+                        updateBrakeModelLA()
                     }else{
                         RemainingFocusTime = InitialFocusTime
                         RemainingIntervalTime = InitialIntervalTime
@@ -221,14 +224,60 @@ struct Pomodoro_Timer_SetUp_Page: View {
         RemainingIntervalTime = InitialIntervalTime
     }
     func addLiveActivity(){
-        //let timerAttributes = DiGiDesk_Timer_WidgetsAttributes(timerType: .Pomodoro)
-        
+        let timerAttributes = DiGiDesk_Timer_WidgetsAttributes(timerType: .Pomodoro)
+        let initialContentState = DiGiDesk_Timer_WidgetsAttributes.ContentState(initialTime: InitialFocusTime, remainingTime: RemainingFocusTime, currentState: "Focus")
+        let content = ActivityContent(state: initialContentState, staleDate: nil, relevanceScore: 0.0)
+        do{
+            let activity = try Activity.request(attributes: timerAttributes, content: content, pushType: nil)
+            LiveActivityID = activity.id
+            print("Activity Added Successfully. id: \(activity.id)")
+        }catch{
+            print(error.localizedDescription)
+        }
     }
-    func updateLiveActivity(){
-        
+    func updateFocusModeLA(){
+        let contentState = DiGiDesk_Timer_WidgetsAttributes.ContentState(initialTime: InitialFocusTime, remainingTime: RemainingFocusTime, currentState: "Focus")
+        if let activity = Activity.activities.first(where: { (activity: Activity<DiGiDesk_Timer_WidgetsAttributes>) in
+            activity.id == LiveActivityID
+        }){
+            print("Activity Found")
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+                Task{
+                    do{
+                        await activity.update(ActivityContent(state: contentState, staleDate: nil))
+                        print("Live Activity updated successfully.")
+                    }catch{
+                        print("Error updating Live Activity: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+    func updateBrakeModelLA(){
+        let contentState = DiGiDesk_Timer_WidgetsAttributes.ContentState(initialTime: InitialIntervalTime, remainingTime: RemainingIntervalTime, currentState: "Brake")
+        if let activity = Activity.activities.first(where: {(activity: Activity<DiGiDesk_Timer_WidgetsAttributes>) in
+            activity.id == LiveActivityID
+        }){
+            print("Activity Found")
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+                Task{
+                    do{
+                        await activity.update(ActivityContent(state: contentState, staleDate: nil))
+                        print("Live Activity updated successfully.")
+                    }catch{
+                        print("Error updating Live Activity: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
     }
     func removeLiveActivity(){
-        
+        if let activity = Activity.activities.first(where: { (activity: Activity<DiGiDesk_Timer_WidgetsAttributes>) in
+            activity.id == LiveActivityID}){
+            Task{
+                await activity.end(activity.content, dismissalPolicy: .immediate)
+            }
+        }
     }
 }
 

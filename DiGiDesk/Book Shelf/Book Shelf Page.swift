@@ -161,8 +161,13 @@ struct PDFViewWrapper: UIViewRepresentable{
     
     func makeUIView(context: Context) -> PDFView {
         let PDFView = PDFView()
+        
         PDFView.autoScales = true
         PDFView.document = PDFDocument(data: pdfData)
+        PDFView.displayMode = .singlePageContinuous
+        PDFView.displaysAsBook = true
+        PDFView.displayDirection = .vertical
+        
         return PDFView
     }
     func updateUIView(_ uiView: PDFView, context: Context) {

@@ -34,7 +34,7 @@ struct Calendar_Task_List_View: View {
                     NavigationLink {
                         Create_Calendar_Task_View()
                     } label: {
-                        Text("Add new Task")
+                        Text("Add New Task")
                             .frame(width: 200, height: 50)
                             .background(Color.blue)
                             .foregroundStyle(Color.white)
