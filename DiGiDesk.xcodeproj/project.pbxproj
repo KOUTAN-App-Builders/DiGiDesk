@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,6 +63,20 @@
 			remoteGlobalIDString = 3C0D25A12B581E1800FFC280;
 			remoteInfo = "DiGiDesk Watch App";
 		};
+		3C22386C2CA7A69B00E0690B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C0D258A2B581E1700FFC280 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C0D25912B581E1700FFC280;
+			remoteInfo = DiGiDesk;
+		};
+		3C22387B2CA7A80600E0690B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C0D258A2B581E1700FFC280 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C0D25912B581E1700FFC280;
+			remoteInfo = DiGiDesk;
+		};
 		3CB4A1432B96C82700D74657 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C0D258A2B581E1700FFC280 /* Project object */;
@@ -116,6 +130,8 @@
 		3C0D25AB2B581E1900FFC280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0D25AE2B581E1900FFC280 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C161A852BD334A400181795 /* PDF Display Test Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDF Display Test Page.swift"; sourceTree = "<group>"; };
+		3C2238662CA7A69B00E0690B /* DiGiDeskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiGiDeskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C2238772CA7A80600E0690B /* DiGiDeskUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiGiDeskUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C33CCD82BB6B4210082E80F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3C3DC4DD2BC54A3B000E3E99 /* Study Ring Background Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Study Ring Background Creator.swift"; sourceTree = "<group>"; };
 		3C40189C2BA0672F002423F6 /* Calendar Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar Page.swift"; sourceTree = "<group>"; };
@@ -150,6 +166,11 @@
 		3CEE560A2B5945BE0030C170 /* Custom Tab Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Tab Bar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3C2238672CA7A69B00E0690B /* DiGiDeskUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DiGiDeskUITests; sourceTree = "<group>"; };
+		3C2238782CA7A80600E0690B /* DiGiDeskUnitTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DiGiDeskUnitTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		3C0D258F2B581E1700FFC280 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -160,6 +181,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3C0D259F2B581E1800FFC280 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2238632CA7A69B00E0690B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2238742CA7A80600E0690B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,6 +233,8 @@
 				3C986EA62BD6B13C000D0FDA /* README.md */,
 				3C0D25942B581E1700FFC280 /* DiGiDesk */,
 				3CB4A1372B96C82600D74657 /* DiGiDesk Timer Widgets */,
+				3C2238672CA7A69B00E0690B /* DiGiDeskUITests */,
+				3C2238782CA7A80600E0690B /* DiGiDeskUnitTests */,
 				3CB4A1322B96C82600D74657 /* Frameworks */,
 				3C0D25A62B581E1800FFC280 /* DiGiDesk Watch App */,
 				3C0D25932B581E1700FFC280 /* Products */,
@@ -210,6 +247,8 @@
 				3C0D25922B581E1700FFC280 /* DiGiDesk.app */,
 				3C0D25A22B581E1800FFC280 /* DiGiDesk Watch App.app */,
 				3CB4A1312B96C82600D74657 /* DiGiDesk Timer WidgetsExtension.appex */,
+				3C2238662CA7A69B00E0690B /* DiGiDeskUITests.xctest */,
+				3C2238772CA7A80600E0690B /* DiGiDeskUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -391,6 +430,52 @@
 			productReference = 3C0D25A22B581E1800FFC280 /* DiGiDesk Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3C2238652CA7A69B00E0690B /* DiGiDeskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C2238702CA7A69B00E0690B /* Build configuration list for PBXNativeTarget "DiGiDeskUITests" */;
+			buildPhases = (
+				3C2238622CA7A69B00E0690B /* Sources */,
+				3C2238632CA7A69B00E0690B /* Frameworks */,
+				3C2238642CA7A69B00E0690B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C22386D2CA7A69B00E0690B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3C2238672CA7A69B00E0690B /* DiGiDeskUITests */,
+			);
+			name = DiGiDeskUITests;
+			packageProductDependencies = (
+			);
+			productName = DiGiDeskUITests;
+			productReference = 3C2238662CA7A69B00E0690B /* DiGiDeskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		3C2238762CA7A80600E0690B /* DiGiDeskUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C22387D2CA7A80600E0690B /* Build configuration list for PBXNativeTarget "DiGiDeskUnitTests" */;
+			buildPhases = (
+				3C2238732CA7A80600E0690B /* Sources */,
+				3C2238742CA7A80600E0690B /* Frameworks */,
+				3C2238752CA7A80600E0690B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C22387C2CA7A80600E0690B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3C2238782CA7A80600E0690B /* DiGiDeskUnitTests */,
+			);
+			name = DiGiDeskUnitTests;
+			packageProductDependencies = (
+			);
+			productName = DiGiDeskUnitTests;
+			productReference = 3C2238772CA7A80600E0690B /* DiGiDeskUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3CB4A1302B96C82600D74657 /* DiGiDesk Timer WidgetsExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CB4A1482B96C82800D74657 /* Build configuration list for PBXNativeTarget "DiGiDesk Timer WidgetsExtension" */;
@@ -415,7 +500,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					3C0D25912B581E1700FFC280 = {
@@ -423,6 +508,14 @@
 					};
 					3C0D25A12B581E1800FFC280 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					3C2238652CA7A69B00E0690B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 3C0D25912B581E1700FFC280;
+					};
+					3C2238762CA7A80600E0690B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 3C0D25912B581E1700FFC280;
 					};
 					3CB4A1302B96C82600D74657 = {
 						CreatedOnToolsVersion = 15.2;
@@ -449,6 +542,8 @@
 				3C0D25912B581E1700FFC280 /* DiGiDesk */,
 				3C0D25A12B581E1800FFC280 /* DiGiDesk Watch App */,
 				3CB4A1302B96C82600D74657 /* DiGiDesk Timer WidgetsExtension */,
+				3C2238652CA7A69B00E0690B /* DiGiDeskUITests */,
+				3C2238762CA7A80600E0690B /* DiGiDeskUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -472,6 +567,20 @@
 			files = (
 				3C0D25AF2B581E1900FFC280 /* Preview Assets.xcassets in Resources */,
 				3C0D25AC2B581E1900FFC280 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2238642CA7A69B00E0690B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2238752CA7A80600E0690B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +637,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C2238622CA7A69B00E0690B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2238732CA7A80600E0690B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CB4A12D2B96C82600D74657 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -546,6 +669,16 @@
 			isa = PBXTargetDependency;
 			target = 3C0D25A12B581E1800FFC280 /* DiGiDesk Watch App */;
 			targetProxy = 3C0D25A42B581E1800FFC280 /* PBXContainerItemProxy */;
+		};
+		3C22386D2CA7A69B00E0690B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C0D25912B581E1700FFC280 /* DiGiDesk */;
+			targetProxy = 3C22386C2CA7A69B00E0690B /* PBXContainerItemProxy */;
+		};
+		3C22387C2CA7A80600E0690B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C0D25912B581E1700FFC280 /* DiGiDesk */;
+			targetProxy = 3C22387B2CA7A80600E0690B /* PBXContainerItemProxy */;
 		};
 		3CB4A1442B96C82700D74657 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -809,6 +942,86 @@
 			};
 			name = Release;
 		};
+		3C22386E2CA7A69B00E0690B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CL6U94RH5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KOUTAN-App-Builders.DiGiDeskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiGiDesk;
+			};
+			name = Debug;
+		};
+		3C22386F2CA7A69B00E0690B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CL6U94RH5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KOUTAN-App-Builders.DiGiDeskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiGiDesk;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C22387E2CA7A80600E0690B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CL6U94RH5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KOUTAN-App-Builders.DiGiDeskUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiGiDesk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DiGiDesk";
+			};
+			name = Debug;
+		};
+		3C22387F2CA7A80600E0690B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CL6U94RH5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KOUTAN-App-Builders.DiGiDeskUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiGiDesk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DiGiDesk";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		3CB4A1462B96C82800D74657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -894,6 +1107,24 @@
 			buildConfigurations = (
 				3C0D25B72B581E1900FFC280 /* Debug */,
 				3C0D25B82B581E1900FFC280 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C2238702CA7A69B00E0690B /* Build configuration list for PBXNativeTarget "DiGiDeskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C22386E2CA7A69B00E0690B /* Debug */,
+				3C22386F2CA7A69B00E0690B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C22387D2CA7A80600E0690B /* Build configuration list for PBXNativeTarget "DiGiDeskUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C22387E2CA7A80600E0690B /* Debug */,
+				3C22387F2CA7A80600E0690B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

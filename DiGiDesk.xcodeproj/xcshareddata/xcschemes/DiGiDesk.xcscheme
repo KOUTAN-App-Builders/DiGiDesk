@@ -28,6 +28,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3C2238652CA7A69B00E0690B"
+               BuildableName = "DiGiDeskUITests.xctest"
+               BlueprintName = "DiGiDeskUITests"
+               ReferencedContainer = "container:DiGiDesk.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3C2238762CA7A80600E0690B"
+               BuildableName = "DiGiDeskUnitTests.xctest"
+               BlueprintName = "DiGiDeskUnitTests"
+               ReferencedContainer = "container:DiGiDesk.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

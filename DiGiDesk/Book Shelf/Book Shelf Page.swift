@@ -9,12 +9,16 @@ import SwiftUI
 import SwiftData
 import UIKit
 import PDFKit
+import Vision
 
 struct Book_Shelf_Page: View {
     
     @Query private var Books: [Book_Data_Model]
     @State var isListViewSelected: Bool = false
     @State private var searchText: String = ""
+    let columns = [
+        GridItem(.adaptive(minimum: 250))
+    ]
     
     var body: some View {
         ScrollView{
@@ -37,30 +41,32 @@ struct Book_Shelf_Page: View {
             .padding(.leading)
             VStack(alignment: .leading, spacing: 20){
                 if isListViewSelected == false{
-                    ForEach(Books){ book in
-                        NavigationLink {
-                            About_Book_Page(Book: book)
-                        } label: {
-                            VStack(alignment: .leading, spacing: 8){
-                                Image(uiImage: UIImage(data: book.Book_Image!)!)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 200, height: 200)
-                                Text(book.Book_Name)
-                                    .font(.headline)
+                    LazyVGrid(columns: columns, spacing: 20){
+                        ForEach(Books){ book in
+                            NavigationLink {
+                                About_Book_Page(Book: book)
+                            } label: {
+                                VStack(alignment: .leading, spacing: 8){
+                                    Image(uiImage: UIImage(data: book.Book_Image!)!)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 200, height: 200)
+                                    Text(book.Book_Name)
+                                        .font(.headline)
+                                }
                             }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
                         }
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
                     }
                     /*
-                    NavigationLink {
-                        PDF_Display_Test_Page()
-                    } label: {
-                        Text("Test Page")
-                    }*/
+                     NavigationLink {
+                     PDF_Display_Test_Page()
+                     } label: {
+                     Text("Test Page")
+                     }*/
                 }else{
                     ForEach(Books){ book in
                         NavigationLink {
@@ -138,7 +144,7 @@ struct About_Book_Page: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 }
-
+                
             }
             Button(action: {DeleteBook(Book)}, label: {
                 Text("Delete")
@@ -158,6 +164,7 @@ struct About_Book_Page: View {
 
 struct PDFViewWrapper: UIViewRepresentable{
     let pdfData: Data
+    @Binding var searchResults: [String]
     
     func makeUIView(context: Context) -> PDFView {
         let PDFView = PDFView()
@@ -172,18 +179,98 @@ struct PDFViewWrapper: UIViewRepresentable{
     }
     func updateUIView(_ uiView: PDFView, context: Context) {
         uiView.document = PDFDocument(data: pdfData)
+        //uiView.highlightedSearchResults(in: uiView)
     }
+    /*private func highlightSearchResults(in pdfView: PDFView){
+        guard let selections = pdfView.document?.selection(for: searchResults.joined(separator: " "), options: [.caseInsensitive]) else { return }
+        pdfView.highlightedSelections = [selections]
+    }*/
 }
 
 struct PDFViewer: View {
     
     let pdfData: Data
+    @State private var searchText: String = ""
+    @State private var searchResults: [String] = []
+    @State private var isSearchBarVisible: Bool = false
+    //@ObservedObject var textExtractor = PDFTextExtractor()
     
     var body: some View {
-        PDFViewWrapper(pdfData: pdfData)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        PDFViewWrapper(pdfData: pdfData, searchResults: $searchResults)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    if isSearchBarVisible{
+                        HStack{
+                            TextField("Search", text: $searchText)
+                                /*.onSubmit {
+                                    searchPDF()
+                                }*/
+                                .textFieldStyle(.roundedBorder)
+                                .transition(.blurReplace())
+                                .padding()
+                            Button(action: {
+                                withAnimation{
+                                    isSearchBarVisible = false
+                                }
+                            }, label: {
+                                Text("Cancel")
+                            })
+                        }
+                    }else{
+                        Button(action: {
+                            withAnimation{
+                                isSearchBarVisible.toggle()
+                            }
+                        }, label: {
+                            Image(systemName: "magnifyingglass")
+                        })
+                    }
+                }
+            }
+            /*.onAppear{
+                textExtractor.extractText(from: PDFDocument(data: pdfData)!)
+            }*/
+    }
+    /*private func searchPDF(){
+        searchResults = textExtractor.extractedText.filter{
+            $0.localizedCaseInsensitiveContains(searchText)
+        }
+    }*/
+}
+
+/*
+class PDFTextExtractor: ObservableObject{
+    @Published var extractedText: [String] = []
+    
+    func extractText(from document: PDFDocument){
+        extractedText.removeAll()
+        let request = VNRecognizeTextRequest{ [weak self] (request, error) in
+            guard let  observations = request.results as? [VNRecognizedTextObservation], error == nil else{ return }
+            let pageText = observations.compactMap{ $0.topCandidates(1).first?.string }.joined(separator: "\n")
+            DispatchQueue.main.async {
+                self?.extractedText.append(pageText)
+            }
+        }
+        request.recognitionLevel = .accurate
+        
+        for pageIndex in 0..<document.pageCount{
+            if let page = document.page(at: pageIndex){
+                guard let pageImage = page.thumbnail(of: page.bounds(for: .mediaBox).size, for: .mediaBox).cgImage else { continue }
+                let handler = VNImageRequestHandler(cgImage: pageImage, options: [:])
+                try? handler.perform([request])
+            }
+        }
     }
 }
+
+extension PDFPage{
+    func selections(for searchText: String) -> [PDFSelection]? {
+        let selection = self.selection(for: searchText)
+        return selection.map{ [$0] }
+    }
+}
+*/
 
 #Preview {
     NavigationView{
